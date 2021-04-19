@@ -6,18 +6,21 @@ import Home from './components/Home'
 import Contact from './components/Contact'
 import Projects from './components/Projects'
 import About from './components/About'
+import  Navbar  from './components/Navbar';
 
 function App() {
   return (
-    <Router>
-      <Switch>
-        <Route exact path='/' render={()=><Home/>}/>
-        <Route exact path='/about' render={()=><About/>}/>
-        <Route exact path='/contact' render={()=><Contact/>}/>
-        <Route exact path='/projects' render={()=><Projects/>}/>
-      </Switch>
-      
-    </Router>
+    <div >
+      <Navbar/>
+      <Router>
+        <Switch>
+          <Route exact path='/' render={()=><Home/>}/>
+          <Route exact path='/about' render={()=><About/>}/>
+          <Route exact path='/contact' render={()=><Contact/>}/>
+          <Route exact path='/projects' render={()=><Projects/>}/>
+        </Switch>  
+      </Router>
+    </div>
   );
 }
 

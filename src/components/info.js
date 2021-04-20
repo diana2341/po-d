@@ -1,8 +1,8 @@
-import endangered from '../imgs/taco.png'
-import illucid from '../imgs/taco.png'
-import cupcake from '../imgs/taco.png'
-import travel from '../imgs/taco.png'
-import shopmart from '../imgs/taco.png'
+import endangered from '../imgs/endangered.png'
+import illucid from '../imgs/illucid.png'
+import cupcake from '../imgs/cupcakes.png'
+import travel from '../imgs/travel.png'
+import shopmart from '../imgs/shopmart.png'
 import taco from '../imgs/taco.png'
 
 
@@ -14,8 +14,8 @@ const info = [
         class:'taco-Haven',
         main:taco,
         name: 'Taco-Haven',
-        tools:'Boostrap, CSS,HTML,React',
-        description:'Mexican Restaurant example site ',
+        tools:'Boostrap, CSS, HTML, React',
+        description:'This web application was made to show a layout of a Mexican Restaurant example site. It was made to show my design skills and ideas',
         gitLink:'https://github.com/diana2341/tac-p',
         deploy:'https://taco-haven-restaurant.netlify.app/'
 
@@ -25,8 +25,8 @@ const info = [
         class:'shopmart',
         main:shopmart,
         name: 'Shop-mart',
-        tools:'Ruby Rails, CSS,HTML,React,Redux',
-        description:'A  ecommerce site for clothing powered with  React + Redux ',
+        tools:'Ruby Rails, CSS, HTML, React, Redux',
+        description:' This Web Application was made to better understand my knoledge of redux. It is A  ecommerce site for clothing, Shoes, and accessories for women, men and children powered with  React + Redux ',
         gitLink:'https://github.com/diana2341/shopMart-front',
         deploy:'https://shop-mart-us.netlify.app/'
 
@@ -36,7 +36,7 @@ const info = [
       main:endangered,
       class:'endangered',
       name: 'Endangered Lives',
-      tools:'React.js, Ruby Rails API, CSS,HTML',
+      tools:'React.js, Ruby Rails API, CSS, HTML',
       libraries:'React slide-show-image, React Simple Maps',
       video:"https://www.youtube.com/embed/xTjHOjz2xGA",
       description:"An educational site  that raises awareness about several animal species endangered due to poaching. Reasons for poaching are explained to the user. They can also view recent news about the animal and are able to join a community to discuss  the topic with others.",
@@ -48,7 +48,7 @@ const info = [
         class:'travel',
         main:travel,
         name: 'Travel Rails',
-        tools:'Ruby Rails, CSS,HTML,Bulma.io',
+        tools:'Ruby Rails, CSS, HTML, Bulma.io',
         video:"https://streamable.com/e/ai4u1c",
         description:'A site for hosting homes as stays for people on vacation and where homes, apartments, or rooms can be booked by people traveling. Users can become hosts and post their homes or find a home.',
         gitLink:'https://github.com/diana2341/My_Travel_rails',

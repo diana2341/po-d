@@ -4,6 +4,8 @@ import React from 'react'
 import info from './info';
 import Card from 'react-bootstrap/Card'
 import ListGroup from 'react-bootstrap/ListGroup' 
+import {Button} from 'react-bootstrap' 
+
 import ListGroupItem from 'react-bootstrap/ListGroupItem' 
 import CardDeck from 'react-bootstrap/CardDeck'
 import {FaGithubSquare} from'react-icons/fa'
@@ -35,28 +37,31 @@ class Projects extends React.Component{
     render(){
         return(
             <div>
-                <div className='presentation'>
+                <div className='presentation'><br/>
                     <h2 className="title2">Projects</h2>
                     <CardDeck className='column'  >
                         {this.state.project.map((info,index)=> 
                         <Card key={index}className='card' >
-                            {/* data-aos="fade-right" */}
+                            <div className="card-horizontal">
                             <a href={info.deploy?info.deploy:info.youtube}>
+                                
                             <Card.Img  className='picturep'variant="top"  alt='pic' src={info.main} />
                             </a> {/* data-aos="fade-left" */}
-                            <Card.Body className='body'>
+                            <Card.Body className='body '>
                             <div >
                             <Card.Title><h1 className='name-project'>{info.name}</h1></Card.Title>
-                            <Card.Text >{info.description}</Card.Text>
-                            <ListGroup className="list-group-flush">
-                            {info.tools.split(',').map((line,index) => <ListGroupItem key={index}className='list'> {line}</ListGroupItem> )}  </ListGroup>
-                            </div>
+                            <Card.Text >{`${info.description}. Tools I used include ${info.tools}` }</Card.Text>
+                            {/* <ListGroup className="list-group-flush">
+                            {info.tools.split(',').map((line,index) => <ListGroupItem key={index}className='list'> {`➤ ${line}`}</ListGroupItem> )}  </ListGroup> */}
+                            </div><br/>
                             <div className='external-l'>
-                            <a className='e-l'href={info.gitLink}><AiFillGithub size={25}/></a>
-                            {info.youtube?<a className='e-l'href={info.youtube}><RiYoutubeLine size={25}/></a>:''}
-                            { info.deploy?<a className='e-l'href={info.deploy}><HiExternalLink size={25}/></a>:''}
+                            <Button size="sm"href={info.gitLink}variant="outline-light">Source Code</Button>{' '}
+                            {info.youtube?<Button size="sm"href={info.youtube}variant="outline-light">Demo Video</Button>:''}
+                            { info.deploy? <Button size="sm"href={info.gitLink}variant="outline-light">Live site</Button>:''}
                             </div>
-                            </Card.Body>  
+                             
+                            </Card.Body> 
+                            </div>
                         </Card>  
                         )}
                     </CardDeck>

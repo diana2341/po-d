@@ -7,10 +7,12 @@ import Contact from './components/Contact'
 import Projects from './components/Projects'
 import About from './components/About'
 import  Navbar  from './components/Navbar';
+import  Footer  from './components/Footer';
+
 
 function App() {
   return (
-    <div >
+    <div className='App'>
       <Navbar/>
       <Router>
         <Switch>
@@ -20,6 +22,7 @@ function App() {
           <Route exact path='/projects' render={()=><Projects/>}/>
         </Switch>  
       </Router>
+      <Footer/>
     </div>
   );
 }

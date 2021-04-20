@@ -2,6 +2,7 @@ import React from 'react'
 import {Container, Figure,Button} from 'react-bootstrap'
 import me from '../imgs/mee.png'
 import TextTransition, { presets } from "react-text-transition";
+import About from './About'
 
 export default function Home(){
 
@@ -22,9 +23,11 @@ const TEXTS = [
   }, []);
 
     return(
+        <>
         <div className='container'>
         <Figure  className='me'>
             <Figure.Image
+            id='img'
                 width={170}
                 height={180}
                 src={me}
@@ -38,11 +41,13 @@ const TEXTS = [
                     springConfig={ presets.wobbly }
                  />
                  </h3><br/>
-                 <Button variant="outline-secondary">Primary</Button>{' '}
+                 <Button href='/about' id='look-btn'variant="outline-secondary">Learn More</Button>{' '}
 
          </Figure.Caption>
-        </Figure>
+        </Figure><br/>
         </div>
+
+        </>
     )
 } 
 

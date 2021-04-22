@@ -8,6 +8,8 @@ import Contact from './components/Contact'
 import About from './components/About'
 import  Navbar  from './components/Navbar';
 import  Footer  from './components/Footer';
+import ReactLoading from 'react-loading';
+
 import React, { Suspense,lazy } from 'react';
 const Projects = lazy(() => import('./components/Projects'));
 
@@ -17,7 +19,7 @@ function App() {
     <div className='App'>
       <Navbar/>
       <Router>
-       <Suspense fallback={<div>Loading...</div>}>
+       <Suspense fallback={<ReactLoading type={'cubes'}height={'20%'} width={'20%'} id='loading'/>}>
 
         <Switch>
           <Route exact path='/' render={()=><Home/>}/>

@@ -38,7 +38,7 @@ class Projects extends React.Component{
         return(
             <div>
                 <div className='presentation'><br/>
-                    <h2 className="title2">Projects</h2>
+                    <h2 className="title2">Projects</h2><br/><br/>
                     <CardDeck className='column'  >
                         {this.state.project.map((info,index)=> 
                         <Card key={index}className='card' >
@@ -55,9 +55,9 @@ class Projects extends React.Component{
                             {info.tools.split(',').map((line,index) => <ListGroupItem key={index}className='list'> {`➤ ${line}`}</ListGroupItem> )}  </ListGroup> */}
                             </div><br/>
                             <div className='external-l'>
-                            <Button size="sm"href={info.gitLink}variant="outline-light">Source Code</Button>{' '}
+                            {info.gitLink?<Button size="sm"href={info.gitLink}variant="outline-light">Source Code</Button>:''}{' '}
                             {info.youtube?<Button size="sm"href={info.youtube}variant="outline-light">Demo Video</Button>:''}{' '}
-                            { info.deploy? <Button size="sm"href={info.gitLink}variant="outline-light">Live Site</Button>:''}
+                            { info.deploy? <Button size="sm"href={info.deploy}variant="outline-light">Live Site</Button>:''}
                             </div>
                              
                             </Card.Body> 

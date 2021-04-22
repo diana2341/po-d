@@ -43,8 +43,8 @@ const TEXTS = [
                  </h3><br/>
                  <Button href='/about' id='look-btn'variant="outline-secondary">Learn More</Button>{' '}
 
-         </Figure.Caption>
-        </Figure><br/>
+         </Figure.Caption><br/><br/>
+        </Figure>
         </div>
 
         </>

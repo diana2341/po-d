@@ -26,7 +26,7 @@ if (curHr < 12) {
 }
   }
     return(
-      <Container><br/>
+      <Container><br/><br/><br/><br/>
 <Jumbotron id='jumbo'>
   <h1>{returnGreeting()} Visitor!</h1><br/>
   <p>

@@ -4,11 +4,14 @@ import cupcake from '../imgs/cupcakes.png'
 import travel from '../imgs/travel.png'
 import shopmart from '../imgs/shopmart.png'
 import taco from '../imgs/taco.png'
+import portfolio from '../imgs/portfolio.png'
+
 
 
 
 
 const info = [
+
     {
         id:6,
         class:'taco-Haven',
@@ -26,7 +29,7 @@ const info = [
         main:shopmart,
         name: 'Shop-mart',
         tools:'Ruby Rails, CSS, HTML, React, Redux',
-        description:' This Web Application was made to better understand my knoledge of redux. It is A  ecommerce site for clothing, Shoes, and accessories for women, men and children powered with  React + Redux ',
+        description:' This Web Application was made to better understand my knowledge of redux. It is A  ecommerce site for clothing, Shoes, and accessories for women, men and children powered with  React + Redux ',
         gitLink:'https://github.com/diana2341/shopMart-front',
         deploy:'https://shop-mart-us.netlify.app/'
 
@@ -65,6 +68,19 @@ const info = [
         gitLink:'https://github.com/diana2341/illucid-beats-front',
         youtube:'https://www.youtube.com/watch?v=pOq3eoo0Mjs',
         deploy:'https://illucid-beats.netlify.app/'
+    },
+    {
+        id:7,
+        class:'Portfolio',
+        main:portfolio,
+        name: 'First portfolio',
+        tools:'React.js, Bootstrap, CSS, HTML',
+        // video:"https://www.youtube.com/embed/J1_E9mqnAM8",
+        description:'My First portfolio site',
+        // gitLink:'https://github.com/diana2341/mod4-sugarlips_cupcakes-client',
+        // youtube:'https://www.youtube.com/watch?v=J1_E9mqnAM8&t=2s',
+        deploy:'https://dianaponcedev.netlify.app'
+
     },
     {
         id:3,

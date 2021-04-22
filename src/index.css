@@ -222,7 +222,7 @@ box-shadow: -15px 6px 15px -8px rgba(0,0,0,0.49);
 
        }
        .form-control::placeholder{
-           color: #f5f2ea;
+           color: #ffffff;
        }
        .form-control:focus{
         outline: none;

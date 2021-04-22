@@ -22,7 +22,7 @@ text-align: center;
 .card-body {
     position: relative;
     /* font-size: 15px; */
-    background-color:transparent;
+    /* background-color:transparent; */
     /* border-radius: 10px; */
     color: white;
     width: 100%;
@@ -30,12 +30,25 @@ text-align: center;
     padding-left: 12px;
     
 }
+#link{
+    color: white;
+ 
+
+
+}
+#con-me{
+    color: white;
+    display: block;
+}
  /* .external-l {
  color: white;
 } */
-.btn{
+/* .btn{
    width: 80%
-}
+} */
+/* .link-btn{
+    width: 12%;
+} */
 .list-group {
     border-radius: 4px;
     -webkit-box-shadow: 0 1px 2px rgb(0 0 0 / 8%);
@@ -131,19 +144,47 @@ box-shadow: -15px 6px 15px -8px rgba(0,0,0,0.49);
                 width:  100%;
                 height: 350px;
                 object-fit: cover;              }
-              .external-l{
+              /* .external-l{
                 position: relative;
                 left: 15%;
                 display: grid;
                 grid-template-columns: auto auto  auto;
                 margin-top: 5px;
-              }
+              } */
             .title2{
                 position: relative;
                 color: white;
                 text-decoration: overline;
                 top: 80px;
             }
+            .form-control{
+                border-top: none;
+                border-left: none;
+                border-right: none;
+                border-bottom:solid 1px white;
+                background-color: transparent;
+                width: 50%;
+                border-radius: 0px;
+            }
+            .collapse {
+                left: 20%;
+       }
+       .accordion{
+           width:40%
+       }
+     
+        .b-link{
+           color: white;
+           border:solid transparent !important;
+           outline:solid transparent !important;
+       }
+     
+       .btn:focus,.btn:active {
+        outline: none !important;
+        box-shadow: none;
+     }
+
+    
               @media(max-width : 991px){
               .card-horizontal{
                   display: inline;

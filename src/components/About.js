@@ -52,8 +52,8 @@ if (curHr < 12) {
   </Row>
 </Container><br/><br/>
   <p>
-    <Button href='/projects' variant="outline-info">View Projects</Button>{' '}
-    <Button href='https://drive.google.com/file/d/1MdqbHYKrEthgH0A5017wC_SOvkqMF3ns/view?usp=sharing' variant="outline-info">View Resume</Button>
+    <Button className='link-btn'href='/projects' variant="outline-info">View Projects</Button>{' '}
+    <Button className='link-btn'href='https://drive.google.com/file/d/1MdqbHYKrEthgH0A5017wC_SOvkqMF3ns/view?usp=sharing' variant="outline-info">View Resume</Button>
 
   </p>
 </Jumbotron>

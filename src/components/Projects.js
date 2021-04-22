@@ -56,8 +56,8 @@ class Projects extends React.Component{
                             </div><br/>
                             <div className='external-l'>
                             <Button size="sm"href={info.gitLink}variant="outline-light">Source Code</Button>{' '}
-                            {info.youtube?<Button size="sm"href={info.youtube}variant="outline-light">Demo Video</Button>:''}
-                            { info.deploy? <Button size="sm"href={info.gitLink}variant="outline-light">Live site</Button>:''}
+                            {info.youtube?<Button size="sm"href={info.youtube}variant="outline-light">Demo Video</Button>:''}{' '}
+                            { info.deploy? <Button size="sm"href={info.gitLink}variant="outline-light">Live Site</Button>:''}
                             </div>
                              
                             </Card.Body> 
@@ -65,6 +65,10 @@ class Projects extends React.Component{
                         </Card>  
                         )}
                     </CardDeck>
+                </div>
+                <div id='link'>
+                    <h4 id='con-me'>// Like what you saw? <a href='/contact'> Contact me!</a></h4><br/><br/><br/>
+
                 </div>
             </div>
         )

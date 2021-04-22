@@ -9,6 +9,7 @@
    body {
     height: 100%;
     position: relative;
+    font-family: 'Kreon'
    }
 .me{
 position: fixed;
@@ -157,31 +158,67 @@ box-shadow: -15px 6px 15px -8px rgba(0,0,0,0.49);
                 text-decoration: overline;
                 top: 80px;
             }
+         
             .form-control{
                 border-top: none;
                 border-left: none;
                 border-right: none;
                 border-bottom:solid 1px white;
                 background-color: transparent;
-                width: 50%;
+                width: 100%;
                 border-radius: 0px;
             }
             .collapse {
                 left: 20%;
        }
        .accordion{
-           width:40%
+           position: relative;
+           /* width:40%; */
+           /* left:55% */
        }
      
         .b-link{
+            /* position: relative; */
            color: white;
            border:solid transparent !important;
            outline:solid transparent !important;
+           /* right: 22%; */
        }
-     
+       #sub-btn{
+           position: relative;
+           right: 22%;
+       }
+     .card-l{
+         padding: 0;
+         /* width: 0; */
+     }
        .btn:focus,.btn:active {
         outline: none !important;
         box-shadow: none;
+     }
+     .accor-card{
+         background-color: transparent;
+         border-bottom: none;
+     }
+     .card-header{
+         padding: 0;
+     }
+     .btn-lnk{
+         position: relative;
+         top: 1%;
+         color: white;
+         display: block;
+     }
+     .col-contact{
+         padding: 10%;
+     }
+     .bye{
+         color: white;
+     }
+     .bye h2{
+         text-decoration: underline; 
+        /* font-family: 'Jacques Francois Shadow'; */
+
      }
 
     

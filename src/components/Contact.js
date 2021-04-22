@@ -13,11 +13,9 @@ export default function Contact(){
 
     return(
         <Container className='col-contact'>
-            <span className='bye'><h2>Thanks You For Visiting My Portfolio !</h2><br/>
-<h3>You can always come back and check out my new projects and blogs that will document my learning.
-
-
-If you would like to get in touch with me, you can send me an email using the form. Or you can go to my LinkedIn and GitHub.</h3></span><br/><br/>
+            <span className='bye'><h2>Thank You For Visiting My Portfolio ! <span className='wave'>👋</span></h2><br/>
+<h3>I hope you enjoyed looking around Im always learning new technologies and making new projects. You can always come back to check out new content!
+You can contact me through email by clicking the mail icon Or you contact me through LinkedIn and checkout my GitHub.</h3></span><br/><br/>
             
             <Row>
             <Col>

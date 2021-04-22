@@ -3,7 +3,7 @@ import { Navbar,Nav } from 'react-bootstrap'
 export default function NavComponent (){
     return(
     <Navbar sticky='top'bg="light" variant="light">
-        <Navbar.Brand href="/">D.P DEV</Navbar.Brand>
+        <Navbar.Brand id='log'href="/">D.P DEV</Navbar.Brand>
         <Nav className="mr-auto">
             <Nav.Link href="/">Home</Nav.Link>
             <Nav.Link href="/projects">Projects</Nav.Link>

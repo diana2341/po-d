@@ -1,11 +1,11 @@
-import endangered from '../imgs/endangered.png'
-import illucid from '../imgs/illucid.png'
-import cupcake from '../imgs/cupcakes.png'
-import travel from '../imgs/travel.png'
-import shopmart from '../imgs/shopmart.png'
-import taco from '../imgs/taco.png'
+import endangered from '../imgs/endangered.webp'
+import illucid from '../imgs/illucid.webp'
+import cupcake from '../imgs/cupcake.webp'
+import travel from '../imgs/travel.webp'
+import shopmart from '../imgs/shopmart.webp'
+import taco from '../imgs/taco.webp'
 import portfolio from '../imgs/portfolio.png'
-import construction from '../imgs/con.png'
+import construction from '../imgs/con.webp'
 
 
 

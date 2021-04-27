@@ -1,6 +1,6 @@
 import React from 'react'
 import {Container, Figure,Button} from 'react-bootstrap'
-import me from '../imgs/mee.png'
+import me from '../imgs/mee.webp'
 import TextTransition, { presets } from "react-text-transition";
 import About from './About'
 

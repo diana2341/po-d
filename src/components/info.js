@@ -5,7 +5,7 @@ import travel from '../imgs/travel.png'
 import shopmart from '../imgs/shopmart.png'
 import taco from '../imgs/taco.png'
 import portfolio from '../imgs/portfolio.png'
-
+import construction from '../imgs/con.png'
 
 
 
@@ -21,6 +21,19 @@ const info = [
         description:'This web application was made to show a layout of a Mexican Restaurant example site. It was made to show my design skills and ideas',
         gitLink:'https://github.com/diana2341/tac-p',
         deploy:'https://taco-haven-restaurant.netlify.app/'
+
+    },
+    {
+        id:8,
+        class:'construction',
+        main:construction,
+        name: 'construction company site',
+        tools:'React.js, Bootstrap, CSS, HTML',
+        // video:"https://www.youtube.com/embed/J1_E9mqnAM8",
+        description:'This is a template used for a personal construction company',
+        // gitLink:'https://github.com/diana2341/mod4-sugarlips_cupcakes-client',
+        // youtube:'https://www.youtube.com/watch?v=J1_E9mqnAM8&t=2s',
+        deploy:'https://jose-construction-co.netlify.app/'
 
     },
     {

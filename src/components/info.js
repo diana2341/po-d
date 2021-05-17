@@ -30,7 +30,7 @@ const info = [
         name: 'construction company site',
         tools:'React.js, Bootstrap, CSS, HTML',
         // video:"https://www.youtube.com/embed/J1_E9mqnAM8",
-        description:'This is a live site used for a Masonary & carpentry company',
+        description:'This is a live site used for a Masonry & carpentry company',
         // gitLink:'https://github.com/diana2341/mod4-sugarlips_cupcakes-client',
         // youtube:'https://www.youtube.com/watch?v=J1_E9mqnAM8&t=2s',
         deploy:'https://medardoconstruction.com/'

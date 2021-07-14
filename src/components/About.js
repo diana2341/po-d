@@ -53,7 +53,7 @@ if (curHr < 12) {
 </Container><br/><br/>
   <p>
     <Button className='link-btn'href='/projects' variant="outline-info">View Projects</Button>{' '}
-    <Button className='link-btn'href='https://drive.google.com/file/d/1MdqbHYKrEthgH0A5017wC_SOvkqMF3ns/view?usp=sharing' variant="outline-info">View Resume</Button>
+    <Button className='link-btn'href='https://drive.google.com/file/d/1cE7B3xX_GA65B0jAOD-HtngRrC7tHPXI/view?usp=sharing' variant="outline-info">View Resume</Button>
 
   </p>
 </Jumbotron>

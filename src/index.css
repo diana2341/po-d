@@ -310,11 +310,12 @@ box-shadow: -15px 6px 15px -8px rgba(0,0,0,0.49);
          60% { transform: rotate( 0.0deg) }  /* Reset for the last half to pause */
         100% { transform: rotate( 0.0deg) }
       }
-      #log{
-        font-family: 'Lemon';
+      #log img{
+        /* font-family: 'Lemon';
         background: -webkit-linear-gradient(#eee, #076585);
         -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
+        -webkit-text-fill-color: transparent; */
+        width: 60px;
       }
 
     

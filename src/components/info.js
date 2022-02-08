@@ -1,17 +1,30 @@
-import endangered from '../imgs/endangered.webp'
-import illucid from '../imgs/illucid.webp'
-import cupcake from '../imgs/cupcake.webp'
-import travel from '../imgs/travel.webp'
-import shopmart from '../imgs/shopmart.webp'
-import taco from '../imgs/taco.webp'
+import endangered from '../imgs/endangered.png'
+import illucid from '../imgs/illucid.png'
+import cupcake from '../imgs/cupcakes.png'
+import travel from '../imgs/travel.png'
+import shopmart from '../imgs/shopmart.png'
+import taco from '../imgs/taco.png'
 import portfolio from '../imgs/portfolio.png'
-import construction from '../imgs/con.webp'
+import construction from '../imgs/construction.png'
+import dwell from '../imgs/dwell.png'
+import hiphop from '../imgs/hiphop.png'
+
+
 
 
 
 
 const info = [
+    {
+        id:9,
+        class:'dwell',
+        main:dwell,
+        name: 'Dwell wine',
+        tools:' CSS, HTML, React',
+        description:'Web application for a wine company. Tools I used include React.js, HTML, CSS',
+        deploy:'https://www.wineclub.dwell.com/'
 
+    },
     {
         id:6,
         class:'taco-Haven',
@@ -30,10 +43,20 @@ const info = [
         name: 'construction company site',
         tools:'React.js, Bootstrap, CSS, HTML',
         // video:"https://www.youtube.com/embed/J1_E9mqnAM8",
-        description:'This is a live site used for a Masonry & carpentry company',
+        description:'This is a site used for a Masonry & carpentry company',
         // gitLink:'https://github.com/diana2341/mod4-sugarlips_cupcakes-client',
         // youtube:'https://www.youtube.com/watch?v=J1_E9mqnAM8&t=2s',
         deploy:'https://medardoconstruction.com/'
+
+    },
+    {
+        id:9,
+        class:'hiphop',
+        main:hiphop,
+        name: 'Parcelle Wine and Hip Hop',
+        tools:' CSS, HTML, React',
+        description:'Web application for a wine company. Tools I used include React.js, HTML, CSS',
+        deploy:'https://www.wineandhiphop.parcellewine.com/'
 
     },
     {
@@ -80,7 +103,7 @@ const info = [
         description:'A sound machine used to reduce stress, increase concentration or enable the ability to sleep better with ambient noises. Users can make a mix of ambient noises and listen to others creations.',
         gitLink:'https://github.com/diana2341/illucid-beats-front',
         youtube:'https://www.youtube.com/watch?v=pOq3eoo0Mjs',
-        deploy:'https://illucid-beats.netlify.app/'
+        // deploy:'https://illucid-beats.netlify.app/'
     },
     {
         id:7,

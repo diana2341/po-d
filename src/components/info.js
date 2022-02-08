@@ -113,9 +113,9 @@ const info = [
         tools:'React.js, Bootstrap, CSS, HTML',
         // video:"https://www.youtube.com/embed/J1_E9mqnAM8",
         description:'My First portfolio site',
-        // gitLink:'https://github.com/diana2341/mod4-sugarlips_cupcakes-client',
+        gitLink:'https://github.com/diana2341/portfolio',
         // youtube:'https://www.youtube.com/watch?v=J1_E9mqnAM8&t=2s',
-        deploy:'https://dianaponcedev.netlify.app'
+        // deploy:'https://dianaponcedev.netlify.app'
 
     },
     {

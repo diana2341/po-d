@@ -144,7 +144,7 @@ export default function Home() {
 						well-organized, a problem solver, and an independent worker who pays
 						close attention to details. While I have worked with many
 						technologies my main tech stack is in React.js, React native, and
-						liquid.js!
+						liquid!
 					</p>
 					<div
 						style={{

@@ -99,7 +99,7 @@ export default function Home() {
 					{/* <h1>{returnGreeting()} Visitor!</h1><br/> */}
 
 					<div className='main-text-container' >
-						<h1>
+						<h1 className='notranslate'>
 							{/* <Typewriter
 								options={{
 									strings: ['Hi, my name is <b>Diana!</b>'],

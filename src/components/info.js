@@ -67,7 +67,7 @@ const info = [
         tools:'Ruby Rails, CSS, HTML, React, Redux',
         description:' This Web Application was made to better understand my knowledge of redux. It is A  ecommerce site for clothing, Shoes, and accessories for women, men and children powered with  React + Redux ',
         gitLink:'https://github.com/diana2341/shopMart-front',
-        deploy:'https://shop-mart-us.netlify.app/'
+        // deploy:'https://shop-mart-us.netlify.app/'
 
     },
     {

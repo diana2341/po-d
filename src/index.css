@@ -43,6 +43,7 @@ body {
 	border-radius: 10em;
 	background-color: white;
 	transition: background-color 250ms;
+	overflow: hidden;
 }
 
 .toggle-checkbox:checked ~ .toggle-slot {

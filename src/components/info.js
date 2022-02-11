@@ -21,7 +21,7 @@ const info = [
         main:dwell,
         name: 'Dwell wine',
         tools:' CSS, HTML, React',
-        description:'Web application for a wine company. Tools I used include React.js, HTML, CSS',
+        description:'Web application for a wine company. ',
         deploy:'https://www.wineclub.dwell.com/'
 
     },
@@ -55,7 +55,7 @@ const info = [
         main:hiphop,
         name: 'Parcelle Wine and Hip Hop',
         tools:' CSS, HTML, React',
-        description:'Web application for a wine company. Tools I used include React.js, HTML, CSS',
+        description:'Web application for a wine company.',
         deploy:'https://www.wineandhiphop.parcellewine.com/'
 
     },

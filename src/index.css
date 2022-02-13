@@ -21,9 +21,8 @@ body {
 	overflow: hidden; */
 	margin-left: 20px;
 	margin-top: 5px;
-	
 }
-.mobile-toggle{
+.mobile-toggle {
 	display: none;
 }
 .toggle-checkbox {
@@ -39,11 +38,14 @@ body {
 	height: 30px;
 	width: 70px;
 	/* border: 3px solid #e4e7ec; */
-	border:3px solid #90d3e2;
+	border: 3px solid #90d3e2;
 	border-radius: 10em;
 	background-color: white;
 	transition: background-color 250ms;
 	overflow: hidden;
+	-webkit-transition-duration: 250ms;
+	-ms-transition-duration: 250ms;
+	-moz-transition-duration: 250ms;
 }
 
 .toggle-checkbox:checked ~ .toggle-slot {
@@ -60,12 +62,15 @@ body {
 	box-shadow: inset 0px 0px 0px 0.75em #ffbb52;
 	transition: background-color 250ms, border-color 250ms,
 		transform 500ms cubic-bezier(0.26, 2, 0.46, 0.71);
+		-webkit-transition-duration: 250ms;
+		-ms-transition-duration: 250ms;
+		-moz-transition-duration: 250ms;
 }
 
 .toggle-checkbox:checked ~ .toggle-slot .toggle-button {
 	background-color: #485367;
 	box-shadow: inset 0px 0px 0px 0.75em white;
-	transform: translate(7px, 3px);;
+	transform: translate(7px, 3px);
 }
 
 .sun-icon {
@@ -83,6 +88,9 @@ body {
 	transform: translate(-7px, -2px) rotate(15deg);
 	transform-origin: 50% 50%;
 	transition: opacity 150ms, transform 500ms cubic-bezier(0.26, 2, 0.46, 0.71);
+	-webkit-transition-duration: 150ms;
+	-ms-transition-duration: 150ms;
+	-moz-transition-duration: 150ms;
 }
 
 .toggle-checkbox:checked ~ .toggle-slot .sun-icon-wrapper {
@@ -105,11 +113,14 @@ body {
 	transform: translate(-8px, 1px) rotate(0deg);
 	transform-origin: 50% 50%;
 	transition: opacity 250ms, transform 500ms cubic-bezier(0.26, 2.5, 0.46, 0.71);
+	-webkit-transition-duration: 250ms;
+	-ms-transition-duration: 250ms;
+	-moz-transition-duration: 250ms;
 }
 
 .toggle-checkbox:checked ~ .toggle-slot .moon-icon-wrapper {
 	opacity: 1;
-	transform:translate(21px, 2px) rotate(-15deg)
+	transform: translate(21px, 2px) rotate(-15deg);
 }
 /*  */
 .me {
@@ -121,9 +132,7 @@ body {
 }
 /* dark mode #224b59 jumbo 306b7d  nav filter: invert(100%) sepia(0%) saturate(7485%) hue-rotate(36deg) brightness(102%) contrast(103%);
 /* cards 497e8a91 */
-*/ svg use {
-	border: solid red;
-}
+
 .card-body {
 	position: relative;
 	/* font-size: 15px; */
@@ -137,21 +146,23 @@ body {
 nav.navbar.bg-light.fixed-top {
 	background-color: #8ac0d2 !important;
 }
-nav.navbar.bg-light.fixed-top.darkNav{
-	background-color: #224b59!important;
+nav.navbar.bg-light.fixed-top.darkNav {
+	background-color: #224b59 !important;
 }
-nav.navbar.bg-light.fixed-top.darkNav a{
-	color:white
+nav.navbar.bg-light.fixed-top.darkNav a {
+	color: white;
 }
-nav.navbar.bg-light.fixed-top.darkNav .navbar-toggler-icon{
-	filter: invert(100%) sepia(0%) saturate(7485%) hue-rotate(36deg) brightness(102%) contrast(103%);}
+nav.navbar.bg-light.fixed-top.darkNav .navbar-toggler-icon {
+	filter: invert(100%) sepia(0%) saturate(7485%) hue-rotate(36deg)
+		brightness(102%) contrast(103%);
+}
 
 .navbar-light .navbar-nav .nav-link {
 	font-size: 18px;
 }
-.navbar-brand.light-logo svg g{
-fill:white;
-stroke: white;
+.navbar-brand.light-logo svg g {
+	fill: white;
+	stroke: white;
 }
 #link {
 	color: rgb(255, 255, 255);
@@ -268,8 +279,8 @@ box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
 	background-color: #7ba3c1 !important;
 	color: white;
 }
-#jumbo.light-jumbo{
-	background-color: #306b7d!important;
+#jumbo.light-jumbo {
+	background-color: #306b7d !important;
 }
 .placeholder {
 	display: none;
@@ -334,11 +345,11 @@ box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
 	max-width: 550px;
 	color: #0f4b5b;
 }
-.card.light-card{
-	background-color:#497e8a91!important ;
+.card.light-card {
+	background-color: #497e8a91 !important ;
 }
-.card.light-card{
-	color:#08252d
+.card.light-card {
+	color: #08252d;
 }
 /* /////// */
 .presentation {
@@ -751,10 +762,10 @@ box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
 	}
 }
 @media (max-width: 991px) {
-	.main-toggle{
+	.main-toggle {
 		display: none;
 	}
-	.mobile-toggle{
+	.mobile-toggle {
 		display: block;
 		position: absolute;
 		right: 90px;
@@ -880,10 +891,10 @@ box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
 		justify-content: center;
 		align-items: center;
 	}
-	.mobile-toggle{
-	display: none;
+	.mobile-toggle {
+		display: none;
 	}
-	.main-toggle{
+	.main-toggle {
 		display: block;
 	}
 	.toggle-contain {

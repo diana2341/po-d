@@ -324,13 +324,13 @@ export default function Home() {
 						>
 							View Projects
 						</Button>{' '}
-						{/* <Button
+						<Button
 							className="link-btn"
-							href="https://drive.google.com/file/d/1cE7B3xX_GA65B0jAOD-HtngRrC7tHPXI/view?usp=sharing"
+							href="https://drive.google.com/file/d/1crVMB1ABjJXDHwwVeTpfjhOwc_EzFYu1/view?usp=sharing"
 							variant="outline-light"
 						>
 							View Resume
-						</Button> */}
+						</Button>
 					</p>
 				</Jumbotron>
 			</Container>

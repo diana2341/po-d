@@ -40,7 +40,7 @@ const info = [
         id:8,
         class:'construction',
         main:construction,
-        name: 'construction company site',
+        name: 'Construction company site',
         tools:'React.js, Bootstrap, CSS, HTML',
         // video:"https://www.youtube.com/embed/J1_E9mqnAM8",
         description:'This is a site used for a Masonry & carpentry company',

@@ -136,8 +136,8 @@ export default function Home() {
 					</div>
 
 					<p>
-						I am a software developer based in New York . I specialize in web
-						and mobile applications. As a software engineer, I strive to develop
+						I am a software enginerr based in New York . I specialize in Frontend development 
+						and mobile development. As a software engineer, I strive to develop
 						efficient and innovative solutions in order to optimize a user's
 						experience and satisfaction. I enjoy learning new and upcoming
 						changes in technology to enhance my skill set. I am a person who is

@@ -32,6 +32,7 @@ import { SiNextdotjs } from 'react-icons/si';
 import { SiMaterialui } from 'react-icons/si';
 import { SiMongodb } from 'react-icons/si';
 import { SiPostman } from 'react-icons/si';
+import { SiFigma } from 'react-icons/si';
 
 import info from './info';
 
@@ -302,6 +303,12 @@ export default function Home() {
 									<SiReact />
 								</h1>
 								React Native
+							</Col>
+							<Col>
+								<h1>
+									<SiFigma />
+								</h1>
+								Figma
 							</Col>
 						</Row>
 					</Container>

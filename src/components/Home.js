@@ -406,7 +406,7 @@ export default function Home() {
 				<div id="link">
 					<h4 id="con-me">
 						// Like what you see?{' '}
-						<a href="mailto: dianaponce2341@gmail.com"> Contact me!</a>
+						<a href="mailto: dianap2341@gmail.com"> Contact me!</a>
 					</h4>
 					<br />
 					<br />

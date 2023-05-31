@@ -29,7 +29,7 @@ import { SiShopify } from "react-icons/si";
 import { SiNodedotjs } from "react-icons/si";
 import { SiTypescript } from "react-icons/si";
 import { SiNextdotjs } from "react-icons/si";
-import { SiMaterialui } from "react-icons/si";
+// import { SiMaterialui } from "react-icons/si";
 import { SiMongodb } from "react-icons/si";
 import { SiPostman } from "react-icons/si";
 import { SiFigma } from "react-icons/si";
@@ -44,13 +44,7 @@ export default function Home() {
 	const [project, setProject] = useState();
 	useEffect(() => {
 		setProject(info);
-		AOS.init({
-			offset: 200,
-			duration: 600,
-			easing: "ease-in-sine",
-			delay: 50,
-			once: true,
-		});
+		AOS.init();
 	});
 	const [paused, setPaused] = useState(false);
 
@@ -272,7 +266,21 @@ export default function Home() {
 							</Col>
 							<Col>
 								<h1>
-									<SiMaterialui />
+									<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="48" height="48" viewBox="0 0 256 256">
+      <g fill="#ffffff" fillRule="nonzero" stroke="none" strokeWidth="1" strokeLinecap="butt" strokeLinejoin="miter" strokeMiterlimit="10" strokeDasharray="" strokeDashoffset="0" fontFamily="none" fontWeight="none" fontSize="none" textAnchor="none" style={{ mixBlendMode: 'normal' }}>
+        <g transform="scale(5.33333,5.33333)">
+          <path d="M1,5l6,4v20l-6,-4z"></path>
+          <path d="M47,20l-6,4v13l6,-4z"></path>
+          <path d="M47,6l-6,4v7l6,-4z"></path>
+          <path d="M35,5l-6,4v20l6,-4z"></path>
+          <path d="M1,12l17,11v-7l-17,-11z"></path>
+          <path d="M35,12l-17,11v-7l17,-11z"></path>
+          <path d="M35,26l-17,11v-7l17,-11z"></path>
+          <path d="M47,34l-17,11v-7l17,-11z"></path>
+          <path d="M30,37.765l-12,-7.765v7l12,7.765z"></path>
+        </g>
+      </g>
+    </svg>
 								</h1>
 								Material UI
 							</Col>
@@ -332,7 +340,13 @@ export default function Home() {
 					<br />
 					<div className="column">
 						{project?.map((info, index) => (
-							<div key={index} className="card" data-aos="zoom-in">
+							<div key={index} 
+								className="card" 
+								data-aos={index%2 == 0? "fade-right" : "fade-left"}
+								data-aos-offset="200"
+								data-aos-delay="50"
+								data-aos-duration="1000"
+							>
 								<div className="card-horizontal">
 									<a href={info.deploy ? info.deploy : info.youtube}>
 										<img className="picturep" variant="top" alt="pic" src={info.main} />

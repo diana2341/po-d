@@ -149,14 +149,14 @@ export default function Home() {
 								<AiOutlineGithub />
 							</a>
 						</h1>
-						<h1 className="btn-lnk">
+						{/* <h1 className="btn-lnk">
 							<a href="https://www.instagram.com/diana.poncee/">
 								<AiOutlineInstagram />
 							</a>
-						</h1>
+						</h1> */}
 
 						<h1 id="mail" className="btn-lnk">
-							<a href="mailto: dianaponce2341@gmail.com">
+							<a href="mailto: dianayponce2341@gmail.com">
 								<AiOutlineMail />
 							</a>
 						</h1>

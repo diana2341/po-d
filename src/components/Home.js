@@ -322,7 +322,7 @@ export default function Home() {
 						</Button>{" "}
 						<Button
 							className="link-btn"
-							href="https://drive.google.com/file/d/1tF4zG9-6Sfio402meQdkGKdO_FqbxyXq/view?usp=sharing"
+							href="https://drive.google.com/file/d/1EtuChyRC9yk8A6GMbYpVjeLInhAsql9l/view?usp=sharing"
 							variant="outline-light"
 							target="_blank"
 						>

@@ -8,6 +8,7 @@ import portfolio from '../imgs/portfolio.png'
 import construction from '../imgs/construction.png'
 import dwell from '../imgs/dwell.png'
 import hiphop from '../imgs/hiphop.png'
+import illucidv2 from '../imgs/illucidv2.png'
 
 
 
@@ -15,6 +16,17 @@ import hiphop from '../imgs/hiphop.png'
 
 
 const info = [
+    {
+        id:10,
+        class:'illucid-v2',
+        main:illucidv2,
+        name: 'Illucid beats V2',
+        description:'Version 2 of Illucid Beats, A sound machine used to reduce stress, increase concentration or enable the ability to sleep better with ambient noises. Users can make a mix of ambient noises and listen to others creations',
+        tools:' Vue, Vuex, MongoDB, CSS, HTML',
+        deploy:'https://illucidbeats.netlify.app',
+        gitLink: 'https://github.com/diana2341/vue-illucid'
+
+    },
     {
         id:9,
         class:'dwell',
@@ -44,9 +56,9 @@ const info = [
         tools:'React.js, Bootstrap, CSS, HTML',
         // video:"https://www.youtube.com/embed/J1_E9mqnAM8",
         description:'This is a site used for a Masonry & carpentry company',
-        // gitLink:'https://github.com/diana2341/mod4-sugarlips_cupcakes-client',
+        gitLink:'https://github.com/diana2341/jos-co',
         // youtube:'https://www.youtube.com/watch?v=J1_E9mqnAM8&t=2s',
-        deploy:'https://medardoconstruction.com/'
+        deploy:'https://www.medardocontracting.com/'
 
     },
     {
@@ -79,7 +91,7 @@ const info = [
       libraries:'React slide-show-image, React Simple Maps',
       video:"https://www.youtube.com/embed/xTjHOjz2xGA",
       description:"An educational site  that raises awareness about several animal species endangered due to poaching. Reasons for poaching are explained to the user. They can also view recent news about the animal and are able to join a community to discuss  the topic with others",
-      gitLink:'https://github.com/diana2341/why-poaching-front',
+    //   gitLink:'https://github.com/diana2341/why-poaching-front',
       youtube:'https://www.youtube.com/watch?v=xTjHOjz2xGA&t=13s',      
     },
     {
@@ -90,7 +102,7 @@ const info = [
         tools:'Ruby Rails, CSS, HTML, Bulma.io',
         video:"https://streamable.com/e/ai4u1c",
         description:'A site for hosting homes for people on vacation and where homes, apartments, or rooms can be booked by people traveling. Users can become hosts and post their homes or find a home',
-        gitLink:'https://github.com/diana2341/My_Travel_rails',
+        // gitLink:'https://github.com/diana2341/My_Travel_rails',
         youtube:'https://streamable.com/ai4u1c',
     },
     {
@@ -101,7 +113,7 @@ const info = [
         tools:'Vanilla Javascript, CSS, HTML, Ruby Rails API',
         video:"https://www.youtube.com/embed/pOq3eoo0Mjs",
         description:'A sound machine used to reduce stress, increase concentration or enable the ability to sleep better with ambient noises. Users can make a mix of ambient noises and listen to others creations',
-        gitLink:'https://github.com/diana2341/illucid-beats-front',
+        // gitLink:'https://github.com/diana2341/illucid-beats-front',
         youtube:'https://www.youtube.com/watch?v=pOq3eoo0Mjs',
         // deploy:'https://illucid-beats.netlify.app/'
     },
@@ -126,7 +138,7 @@ const info = [
         tools:'React.js, Ruby Rails API, CSS,HTML',
         video:"https://www.youtube.com/embed/J1_E9mqnAM8",
         description:'An ecommerce site for a bakery that sells cupcakes, where  users can order any amount of these treats to be delivered to their homes',
-        gitLink:'https://github.com/diana2341/mod4-sugarlips_cupcakes-client',
+        // gitLink:'https://github.com/diana2341/mod4-sugarlips_cupcakes-client',
         youtube:'https://www.youtube.com/watch?v=J1_E9mqnAM8&t=2s',
     }
 

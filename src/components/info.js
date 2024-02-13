@@ -66,7 +66,7 @@ const info = [
         main:cliniclean,
         name: 'Cliniclean',
         tools:' Wordpress, Elementor, Google analytics',
-        description:' I designed and developed a website for a pharmaceutical company focusing on antiseptic solution products. Leveraging Elementor on WordPress, I created a user-friendly platform that seamlessly integrates product information. Additionally, by incorporating Google Analytics, I offered valuable insights to the client',
+        description:' Designed and developed a website for a pharmaceutical company focusing on antiseptic solution products. Leveraging Elementor on WordPress, I created a user-friendly platform that seamlessly integrates product information. Additionally, by incorporating Google Analytics, I offered valuable insights to the client',
         deploy:'https://cliniclean.com/'
 
     },

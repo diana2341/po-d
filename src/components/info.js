@@ -1,6 +1,6 @@
 import endangered from '../imgs/endangered.png'
 import illucid from '../imgs/illucid.png'
-import cupcake from '../imgs/cupcakes.png'
+import judi from '../imgs/judihollder.png'
 import travel from '../imgs/travel.png'
 import shopmart from '../imgs/shopmart.png'
 import taco from '../imgs/taco.png'
@@ -11,7 +11,7 @@ import hiphop from '../imgs/hiphop.png'
 import renovar from '../imgs/renovar.png'
 import illucidvv2 from '../imgs/illucidvv2.png'
 import hrhealthCare from '../imgs/hrhealthcare.png'
-import cliniclean from '../imgs/cliniclean.png'
+import cliniclean from '../imgs/clinicleanv.png'
 
 
 
@@ -68,6 +68,16 @@ const info = [
         tools:' Wordpress, Elementor, Google analytics',
         description:' Designed and developed a website for a pharmaceutical company focusing on antiseptic solution products. Leveraging Elementor on WordPress, I created a user-friendly platform that seamlessly integrates product information. Additionally, by incorporating Google Analytics, I offered valuable insights to the client',
         deploy:'https://cliniclean.com/'
+
+    },
+    {
+        id:13,
+        class:'JudiHoller',
+        main:judi,
+        name: 'Judi Holler',
+        tools:' Wordpress, Elementor, Figma',
+        description:" This is a vibrant website brought to life with Elementor and WordPress, serves as the digital home for motivational speaker Judi Holler. Translating Figma designs into reality, the site offers an immersive experience, showcasing Judi's expertise in fear management and empowering her audience with inspiration.",
+        deploy:'https://judiholler.com/'
 
     },
     {

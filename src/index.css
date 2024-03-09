@@ -204,6 +204,7 @@ box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0); */
   margin: 0 auto;
   max-width: 1280px;
   margin-top: 139px;
+  padding-top: 139px;
   padding-left: 25px;
   padding-right: 25px;
 }
@@ -215,13 +216,13 @@ box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0); */
 @import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
 .container-main h1 {
   font-size: 50px;
-  line-height: 100px;
+  line-height: 85px;
   color: transparent;
   -webkit-background-clip: text;
   background-position: 0 0;
   -webkit-background-clip: text;
   color: white;
-
+  white-space: normal;
   font-family: "Pacifico";
 }
 @keyframes back {
@@ -604,7 +605,6 @@ svg.animate #arms2 {
   right: 15px;
   bottom: 20px;
   z-index: 10000000;
-
 }
 .access-tools .toast {
   max-width: 450px;
@@ -782,6 +782,22 @@ svg.animate #arms2 {
     justify-content: center;
   }
 }
+@media (max-width: 430px) {
+  .accessibility-btn {
+    right: 15px;
+    left: initial;
+  }
+  #jumbo .row {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 10px;
+  }
+  .Typewriter__wrapper,
+  .text-wrapper {
+    text-align: center;
+    align-items: center;
+  }
+}
 @media (max-width: 414px) {
   .me-svg svg {
     width: 340px;
@@ -817,14 +833,10 @@ svg.animate #arms2 {
   }
   .container-main h1 {
     font-size: 35px;
+    line-height: initial;
   }
   .main-text-container {
     gap: 2px;
-  }
-  #jumbo .row {
-    display: grid;
-    grid-template-columns: auto auto auto;
-    gap: 10px;
   }
 }
 @media (max-width: 375px) {
@@ -865,11 +877,11 @@ svg.animate #arms2 {
     width: 268px;
     height: auto;
   }
-  #jumbo .row {
+  /* #jumbo .row {
     display: grid;
     grid-template-columns: auto auto;
     gap: 10px;
-  }
+  } */
   #jumbo p {
     display: flex;
     flex-direction: column;

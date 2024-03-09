@@ -33,7 +33,7 @@ const Accessibility = (props) => {
   const [grayscale, setGrayscale] = useState(false);
   const [mask, setMask] = useState(false);
   const [highlight, setHighlight] = useState(false);
-  function adjustFontSize(element, reset) {
+  function adjustFontSize(element, reset, size) {
     if (element.nodeType === Node.ELEMENT_NODE && element.hasChildNodes()) {
       if (!element.classList.contains("access-tools")) {
         // Check if the element is not within access-tools
@@ -47,31 +47,34 @@ const Accessibility = (props) => {
             const computedStyle = window.getComputedStyle(element);
             const currentFontSize = parseFloat(computedStyle.fontSize);
             if (!isNaN(currentFontSize)) {
+              let amount = size === 1 ? 3 : size === 2 ? 6 : size === 3 ? 9 : 0;
               const newFontSize = reset
-                ? currentFontSize - 9 + "px"
+                ? currentFontSize - amount + "px"
                 : currentFontSize + 3 + "px"; // Increase by 3px
               element.style.fontSize = newFontSize;
             }
             break; // Only adjust the font size of the first text node
           } else {
-            adjustFontSize(child, reset); // Recursively check child nodes
+            adjustFontSize(child, reset, size); // Recursively check child nodes
           }
         }
       }
     }
   }
-  const pauseUpdate = () => {
+  const pauseUpdate = (ispaused, isRestAction) => {
+    console.log(!ispaused, isRestAction);
+    if (!ispaused && isRestAction) return;
     const svgElements = document.querySelectorAll("svg");
 
     svgElements.forEach((svgElement) => {
-      svgElement.classList.toggle("animate");
-
       if (!pauseAnimation) {
         // Pause the animation by pausing all animations
         svgElement.pauseAnimations();
+        svgElement.classList.remove("animate");
       } else {
         // Resume the animation by unpausing all animations
         svgElement.unpauseAnimations();
+        svgElement.classList.add("animate");
       }
     });
   };
@@ -115,7 +118,7 @@ const Accessibility = (props) => {
         if (textSize === 3) {
           setTextSize(0);
           setTextOption(false);
-          adjustFontSize(document.body, true);
+          adjustFontSize(document.body, true, 3);
         }
 
         break;
@@ -252,6 +255,8 @@ const Accessibility = (props) => {
         break;
       case "Reset":
         setTextOption(false);
+        adjustFontSize(document.body, true, textSize);
+        pauseUpdate(pauseAnimation, true);
         setTextSize(0);
         setBigCursor(false);
         setReadableFont(false);
@@ -276,9 +281,7 @@ const Accessibility = (props) => {
           "hilight-links"
         );
         body.classList.remove("readable");
-        adjustFontSize(document.body, true);
         toggleAOSAttributes();
-        pauseUpdate();
 
         break;
       default:
@@ -424,7 +427,9 @@ const Accessibility = (props) => {
 
                         return (
                           <div
-                            className={`option-item ${optionClassName} ${option.name.split(' ').join('-')}`}
+                            className={`option-item ${optionClassName} ${option.name
+                              .split(" ")
+                              .join("-")}`}
                             key={index}
                             onClick={option.func}
                           >

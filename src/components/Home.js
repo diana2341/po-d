@@ -70,7 +70,7 @@ export default function Home() {
 
   return (
     <>
-      <div className="container-main" id="intro">
+      <div className="container-main content" id="intro">
         <div className="me-svg">
           <Me />
         </div>

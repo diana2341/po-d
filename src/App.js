@@ -16,7 +16,7 @@ function App() {
       {/* <img src={me} className="background-svg" alt="Background SVG"/> */}
       <Svg />
       <Navbar />
-      <Router >
+      <Router>
         <Suspense fallback={<ReactLoading type={"cubes"} id="loading" />}>
           <Switch>
             <Route exact path="/" render={() => <Home />} />

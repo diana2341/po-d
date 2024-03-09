@@ -15,7 +15,7 @@ function App() {
       <Navbar/>
       <Router>
        <Suspense fallback={<ReactLoading type={'cubes'} id='loading'/>}>
-
+ 
         <Switch>
           <Route exact path='/' render={()=><Home/>}/>
         </Switch> 

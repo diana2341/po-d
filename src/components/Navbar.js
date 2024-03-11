@@ -46,7 +46,7 @@ export default function NavComponent() {
     if (!light) {
       localStorage.setItem("mode", "dark");
 
-      document.querySelector(".App").style.backgroundColor = `#224b59`;
+    //   document.querySelector(".App").style.backgroundColor = `#224b59`;
       document
         .querySelector("nav.navbar.bg-light.fixed-top")
         .classList.add("darkNav");
@@ -56,7 +56,7 @@ export default function NavComponent() {
         card.classList.add("light-card")
       );
     } else if (light) {
-      document.querySelector(".App").style.backgroundColor = `#89c0d2`;
+    //   document.querySelector(".App").style.backgroundColor = `#89c0d2`;
       document
         .querySelector("nav.navbar.bg-light.fixed-top")
         .classList.remove("darkNav");

@@ -97,12 +97,12 @@ export default function Home() {
           >
             <h1 className="btn-lnk">
               <a href="https://www.linkedin.com/in/diana-ponce-1718821a2/">
-                <FaLinkedinIn />
+                <FaLinkedinIn aria-label="LinkedIn Icon"/>
               </a>
             </h1>
             <h1 className="btn-lnk">
               <a href="https://github.com/diana2341">
-                <AiOutlineGithub />
+                <AiOutlineGithub aria-label="Github Icon"/>
               </a>
             </h1>
             {/* <h1 className="btn-lnk">
@@ -113,7 +113,7 @@ export default function Home() {
 
             <h1 id="mail" className="btn-lnk">
               <a href="mailto: dianayponce2341@gmail.com">
-                <AiOutlineMail />
+                <AiOutlineMail aria-label="Mail Icon"/>
               </a>
             </h1>
           </div>
@@ -132,91 +132,91 @@ export default function Home() {
             <Row md={5}>
               <Col>
                 <h1>
-                  <SiCss3 />{" "}
+                  <SiCss3 aria-label="CSS Icon"/>{" "}
                 </h1>
                 CSS
               </Col>
               <Col>
                 <h1>
-                  <SiHtml5 />{" "}
+                  <SiHtml5 aria-label="HTML Icon"/>{" "}
                 </h1>
                 HTML5
               </Col>
               <Col>
                 <h1>
-                  <SiJavascript />
+                  <SiJavascript aria-label="Javascript Icon"/>
                 </h1>
                 Javascript
               </Col>
               <Col>
                 <h1>
-                  <SiBootstrap />
+                  <SiBootstrap aria-label="Bootstrap Icon"/>
                 </h1>
                 Boostrap
               </Col>
               <Col>
                 <h1>
-                  <SiGithub />
+                  <SiGithub aria-label="Github Icon"/>
                 </h1>
                 Github
               </Col>
               <Col>
                 <h1>
-                  <DiRuby />
+                  <DiRuby aria-label="Ruby Icon"/>
                 </h1>
                 Ruby
               </Col>
               <Col>
                 <h1>
-                  <SiPostgresql />
+                  <SiPostgresql aria-label="Postgresql Icon"/>
                 </h1>
                 Postgresql
               </Col>
               <Col>
                 <h1>
-                  <SiReact />
+                  <SiReact aria-label="React Icon"/>
                 </h1>
                 React
               </Col>
               <Col>
                 <h1>
-                  <SiRedux />
+                  <SiRedux aria-label="Redux Icon"/>
                 </h1>
                 Redux
               </Col>
               <Col>
                 <h1>
-                  <SiMysql />
+                  <SiMysql aria-label="MySQL Icon"/>
                 </h1>
                 Mysql
               </Col>
               <Col>
                 <h1>
-                  <SiVuedotjs />
+                  <SiVuedotjs aria-label="Vue Icon"/>
                 </h1>
                 Vuejs
               </Col>
               <Col>
                 <h1>
-                  <SiShopify />
+                  <SiShopify aria-label="Shopify Icon"/>
                 </h1>
                 Shopify Liquid
               </Col>
               <Col>
                 <h1>
-                  <SiNodedotjs />
+                  <SiNodedotjs aria-label="Node.JS Icon"/>
                 </h1>{" "}
                 Nodejs
               </Col>
               <Col>
                 <h1>
-                  <SiTypescript />
+                  <SiTypescript aria-label="Typescript Icon"/>
                 </h1>
                 Typesrcipt
               </Col>
               <Col>
                 <h1>
-                  <SiNextdotjs />
+                  <SiNextdotjs aria-label="Next.JS Icon"/>
                 </h1>
                 Nextjs
               </Col>
@@ -229,6 +229,7 @@ export default function Home() {
                     width="48"
                     height="48"
                     viewBox="0 0 256 256"
+					aria-label="Material UI Icon"
                   >
                     <g
                       fill="#ffffff"
@@ -264,25 +265,25 @@ export default function Home() {
               </Col>
               <Col>
                 <h1>
-                  <SiMongodb />
+                  <SiMongodb aria-label="MongoDB Icon"/>
                 </h1>
                 Mongodb
               </Col>
               <Col>
                 <h1>
-                  <SiPostman />
+                  <SiPostman aria-label="Postman Icon"/>
                 </h1>
                 Postman
               </Col>
               <Col>
                 <h1>
-                  <SiReact />
+                  <SiReact aria-label="React Native Icon"/>
                 </h1>
                 React Native
               </Col>
               <Col>
                 <h1>
-                  <SiFigma />
+                  <SiFigma aria-label="Figma Icon"/>
                 </h1>
                 Figma
               </Col>
@@ -297,6 +298,7 @@ export default function Home() {
                 document.getElementById("project")?.scrollIntoView(true)
               }
               variant="outline-light"
+			  aria-label="View Projects"
             >
               View Projects
             </Button>{" "}
@@ -305,6 +307,7 @@ export default function Home() {
               href="https://drive.google.com/file/d/1EtuChyRC9yk8A6GMbYpVjeLInhAsql9l/view?usp=sharing"
               variant="outline-light"
               target="_blank"
+			  aria-label="View Resume"
             >
               View Resume
             </Button>
@@ -348,7 +351,7 @@ export default function Home() {
                     <div className="external-l">
                       {info.gitLink ? (
                         <a href={info.gitLink} target="_blank" rel="noopener noreferrer">
-                          <Button size="sm" variant="outline-light">
+                          <Button size="sm" variant="outline-light" aria-label={`View ${info.name}'s source Code`}>
                             Source Code
                           </Button>
                         </a>
@@ -357,7 +360,7 @@ export default function Home() {
                       )}{" "}
                       {info.youtube ? (
                         <a href={info.youtube} target="_blank" rel="noopener noreferrer">
-                          <Button size="sm" variant="outline-light">
+                          <Button size="sm" variant="outline-light" aria-label={`View ${info.name}'s Demo Vdeo`}>
                             Demo Video
                           </Button>
                         </a>
@@ -366,7 +369,7 @@ export default function Home() {
                       )}{" "}
                       {info.deploy ? (
                         <a href={info.deploy} target="_blank" rel="noopener noreferrer">
-                          <Button size="sm" variant="outline-light">
+                          <Button size="sm" variant="outline-light" aria-label={`View ${info.name}'s Website`}>
                             Live Site
                           </Button>
                         </a>
@@ -385,7 +388,7 @@ export default function Home() {
         <div id="link">
           <span id="con-me">
             // Like what you see?{" "}
-            <a href="mailto: dianap2341@gmail.com"> Contact me!</a>
+            <a href="mailto: dianap2341@gmail.com" aria-label="email to contact me!"> Contact me!</a>
           </span>
           <br />
           <br />

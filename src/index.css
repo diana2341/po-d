@@ -19,6 +19,7 @@ body {
 }
 .mobile-toggle {
   display: none;
+  visibility: hidden;
 }
 .toggle-checkbox {
   position: absolute;
@@ -170,6 +171,12 @@ nav.navbar.bg-light.fixed-top.darkNav .navbar-toggler-icon {
   color: rgb(255, 255, 255);
   display: block;
   font-size: 24px;
+}
+#con-me a {
+  text-decoration: underline;
+  color: white;
+  font-weight: bolder;
+  cursor: pointer;
 }
 
 .list-group {
@@ -723,6 +730,8 @@ svg.animate #arms2 {
   .mobile-toggle {
     display: block;
     position: absolute;
+    visibility: visible;
+
     right: 90px;
     top: 15px;
   }
@@ -874,6 +883,7 @@ svg.animate #arms2 {
   }
   .mobile-toggle {
     display: none;
+    visibility: hidden;
   }
   .main-toggle {
     display: block;

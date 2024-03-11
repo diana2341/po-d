@@ -35,7 +35,7 @@ import { SiPostman } from "react-icons/si";
 import { SiFigma } from "react-icons/si";
 
 import info from "./info";
-
+import { redirect } from "react-router-dom";
 import Typewriter from "typewriter-effect";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -46,27 +46,10 @@ export default function Home() {
     setProject(info);
     AOS.init();
   });
-  const [paused, setPaused] = useState(true);
 
-  const pauseUpdate = () => {
-    const svgElement = document.querySelector(".background-svg");
-    if (paused) {
-      // Pause the animation by pausing all animations
-      svgElement.pauseAnimations();
-      document.querySelector(".App").style.animationPlayState = "paused";
-      setPaused(false);
-    } else {
-      // Resume the animation by unpausing all animations
-      svgElement.unpauseAnimations();
-      document.querySelector(".App").style.animationPlayState = "running";
-      setPaused(true);
-    }
-  };
-
-  const showPausebtn = () => {
-    document.querySelector(".pause-play").style.display = "block";
-    document.querySelector(".placeholder").style.display = "none";
-  };
+  const redirectTo = (location) =>{
+	window.open(location, '_blank');
+}
 
   return (
     <>
@@ -86,20 +69,12 @@ export default function Home() {
                 onInit={(typewriter) => {
                   typewriter
                     .typeString("Hi, my name is Diana!")
-                    .callFunction(() => {
-                      setInterval(showPausebtn, 600);
-                    })
+                    .callFunction(() => {})
                     .pauseFor(900000000000)
                     .start();
                 }}
               />
             </h1>
-            <div className="placeholder" style={{ opacity: "0" }}>
-              {paused ? <AiOutlinePlayCircle /> : <AiOutlinePauseCircle />}
-            </div>
-            <h2 className="pause-play" onClick={pauseUpdate}>
-              {!paused ? <AiOutlinePlayCircle /> : <AiOutlinePauseCircle />}
-            </h2>
           </div>
 
           <p>
@@ -109,7 +84,8 @@ export default function Home() {
             user's experience and satisfaction. I enjoy learning new and
             upcoming changes in technology to enhance my skill set. I am a
             person who is well-organized, a problem solver, and an independent
-            worker who pays close attention to details.
+            worker who pays close attention to details. I thrive in collaborative 
+			environments and enjoy seamlessly integrating into teams to bring any ideas to life!
           </p>
           <div
             style={{
@@ -353,54 +329,47 @@ export default function Home() {
                 data-aos-duration="1000"
               >
                 <div className="card-horizontal">
-                  <a href={info.deploy ? info.deploy : info.youtube}>
+               
                     <img
+					onClick={()=>redirectTo(info.deploy ? info.deploy : info.youtube)}
                       className="picturep"
                       variant="top"
-                      alt="pic"
+                      alt={`Image of ${info.name} website`}
                       src={info.main}
                     />
-                  </a>{" "}
-                  {/* data-aos="fade-left" */}
+                  {" "}
                   <div className="body ">
                     <div>
                       <h1 className="name-project">{info.name}</h1>
                       <p>{`${info.description}. Tools I used include ${info.tools}`}</p>
-                      {/* <ListGroup className="list-group-flush">
-                            {info.tools.split(',').map((line,index) => <ListGroupItem key={index}className='list'> {`➤ ${line}`}</ListGroupItem> )}  </ListGroup> */}
+                     
                     </div>
                     <br />
                     <div className="external-l">
                       {info.gitLink ? (
-                        <Button
-                          size="sm"
-                          href={info.gitLink}
-                          variant="outline-light"
-                        >
-                          Source Code
-                        </Button>
+                        <a href={info.gitLink} target="_blank" rel="noopener noreferrer">
+                          <Button size="sm" variant="outline-light">
+                            Source Code
+                          </Button>
+                        </a>
                       ) : (
                         ""
                       )}{" "}
                       {info.youtube ? (
-                        <Button
-                          size="sm"
-                          href={info.youtube}
-                          variant="outline-light"
-                        >
-                          Demo Video
-                        </Button>
+                        <a href={info.youtube} target="_blank" rel="noopener noreferrer">
+                          <Button size="sm" variant="outline-light">
+                            Demo Video
+                          </Button>
+                        </a>
                       ) : (
                         ""
                       )}{" "}
                       {info.deploy ? (
-                        <Button
-                          size="sm"
-                          href={info.deploy}
-                          variant="outline-light"
-                        >
-                          Live Site
-                        </Button>
+                        <a href={info.deploy} target="_blank" rel="noopener noreferrer">
+                          <Button size="sm" variant="outline-light">
+                            Live Site
+                          </Button>
+                        </a>
                       ) : (
                         ""
                       )}
@@ -414,10 +383,10 @@ export default function Home() {
         <Accessibility aos={AOS} />
 
         <div id="link">
-          <h4 id="con-me">
+          <span id="con-me">
             // Like what you see?{" "}
             <a href="mailto: dianap2341@gmail.com"> Contact me!</a>
-          </h4>
+          </span>
           <br />
           <br />
           <br />

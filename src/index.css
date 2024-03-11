@@ -125,14 +125,9 @@ body {
   transform: translate(-50%, -50%);
   text-align: center;
 }
-/* dark mode #224b59 jumbo 306b7d  nav filter: invert(100%) sepia(0%) saturate(7485%) hue-rotate(36deg) brightness(102%) contrast(103%);
-/* cards 497e8a91 */
 
 .card-body {
   position: relative;
-  /* font-size: 15px; */
-  /* background-color:transparent; */
-  /* border-radius: 10px; */
   color: white;
   width: 100%;
   padding: 0;
@@ -174,16 +169,9 @@ nav.navbar.bg-light.fixed-top.darkNav .navbar-toggler-icon {
 #con-me {
   color: rgb(255, 255, 255);
   display: block;
+  font-size: 24px;
 }
-/* .external-l {
- color: white;
-} */
-/* .btn{
-   width: 80%
-} */
-/* .link-btn{
-    width: 12%;
-} */
+
 .list-group {
   border-radius: 4px;
   -webkit-box-shadow: 0 1px 2px rgb(0 0 0 / 8%);
@@ -193,10 +181,7 @@ nav.navbar.bg-light.fixed-top.darkNav .navbar-toggler-icon {
   background-color: transparent;
   border: transparent;
 }
-#img {
-  /* -webkit-box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0); 
-box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0); */
-}
+
 .container-main {
   display: flex;
   flex-direction: row;
@@ -204,9 +189,10 @@ box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0); */
   align-items: flex-start;
   margin: 0 auto;
   max-width: 1280px;
-  margin-top: 139px;
+  padding-top: 139px;
   padding-left: 25px;
   padding-right: 25px;
+  align-items: center;
 }
 .main-text-container {
   display: flex;
@@ -277,6 +263,7 @@ body {
 .card-horizontal {
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 .card-img {
   position: relative;
@@ -319,6 +306,7 @@ body {
   gap: 20px;
   justify-content: space-evenly;
   padding: 10px;
+  overflow: hidden;
   /* row-gap: 0%; */
 }
 
@@ -603,7 +591,7 @@ svg.animate #arms2 {
 .access-tools {
   position: fixed;
   right: 15px;
-  bottom: 20px;
+  bottom: 10px;
   z-index: 10000000;
 }
 .access-tools .toast {
@@ -670,10 +658,6 @@ svg.animate #arms2 {
 }
 .custom-cursor:hover,
 .custom-cursor * {
-  /* cursor: url("https://cdn.accessibly.app/accessibly-widget-assets/images/cursor.png"),
-    default !important; */
-  /* cursor: url("./imgs/cursor.png"),
-    default !important; */
   cursor: url("./imgs/cursor.png") 27.5 27.5, auto;
 }
 /*  */
@@ -783,6 +767,9 @@ svg.animate #arms2 {
   }
 }
 @media (max-width: 430px) {
+  .Typewriter__wrapper {
+    font-size: 50px;
+  }
   .accessibility-btn {
     right: 15px;
     left: initial;
@@ -829,7 +816,8 @@ svg.animate #arms2 {
       brightness(97%) contrast(95%);
   }
   .container-main {
-    padding: 0;
+    padding-left: 0;
+    padding-right: 0;
   }
   .container-main h1 {
     font-size: 35px;
@@ -877,11 +865,6 @@ svg.animate #arms2 {
     width: 268px;
     height: auto;
   }
-  /* #jumbo .row {
-    display: grid;
-    grid-template-columns: auto auto;
-    gap: 10px;
-  } */
   #jumbo p {
     display: flex;
     flex-direction: column;

@@ -8,7 +8,7 @@ const AnimatedCirclesSVG = () => {
         style={{
           margin: "auto",
           display: "block",
-          zIndex: 1,
+          zIndex: 0,
           position: "relative",
           shapeRendering: "auto",
         }}

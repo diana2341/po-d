@@ -17,7 +17,7 @@ export default function NavComponent() {
         .querySelector("nav.navbar.bg-light.fixed-top")
         .classList.remove("darkNav");
       document.querySelector(".navbar-brand").classList.remove("light-logo");
-      document.querySelector(".accessibility-btn svg").style.color = "initial";
+      document.querySelector(".accessibility-btn svg").style.color = "#34465e";
 
       document.querySelector("#jumbo").classList.remove("light-jumbo");
       Array.from(document.getElementsByClassName("card")).map((card) =>

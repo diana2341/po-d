@@ -515,14 +515,8 @@ const Accessibility = (props) => {
         <FaUniversalAccess
           size={60}
           color="#34465e"
-          tabIndex="0"
-          aria-label="Open accessibility widget"
           onClick={openTools}
-          onKeyPress={(event) => {
-            if (event.key === "Enter") {
-              openTools();
-            }
-          }}
+        
         />
       </div>
       {mask && <ReadingMask />}

@@ -17,7 +17,6 @@ const AnimatedCirclesSVG = () => {
         viewBox="0 0 1440 675"
         xmlns="http://www.w3.org/2000/svg"
         className="background-svg"
-        alt="Bibbles background"
         aria-label="Bubbles background"
       >
         <g transform="translate(720,337.5) scale(1,1) translate(-720,-337.5)">

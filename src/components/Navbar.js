@@ -25,7 +25,7 @@ export default function NavComponent() {
       );
     } else if (value === "dark") {
       setLight(true);
-
+	  
       document.body.style.backgroundColor = `#224b59`;
       document
         .querySelector("nav.navbar.bg-light.fixed-top")

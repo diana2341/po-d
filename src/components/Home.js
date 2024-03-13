@@ -52,7 +52,7 @@ export default function Home({openAccess, setOpenAccess}) {
   };
 
   return (
-    <main>
+    <main className="main-container">
       <section className="container-main content" id="intro" tabIndex="-1">
         <div className="me-svg">
           <Me />

@@ -1,5 +1,5 @@
 import { FaUniversalAccess } from "react-icons/fa";
-import { useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import Toast from "react-bootstrap/Toast";
 import { MdOutlineTextFields } from "react-icons/md";
 import { FaMousePointer } from "react-icons/fa";
@@ -15,6 +15,7 @@ import Button from "react-bootstrap/Button";
 import { GrPowerReset } from "react-icons/gr";
 import { CgLoadbar } from "react-icons/cg";
 import ReadingMask from "./ReadingMask";
+
 const Accessibility = (props) => {
   const [open, setOpen] = useState(false);
   const [textOption, setTextOption] = useState(false);
@@ -33,10 +34,60 @@ const Accessibility = (props) => {
   const [grayscale, setGrayscale] = useState(false);
   const [mask, setMask] = useState(false);
   const [highlight, setHighlight] = useState(false);
+  const [isBodyHidden, setIsBodyHidden] = useState(false);
+
+  const [focusedCategory, setFocusedCategory] = useState(null);
+  // Function to handle blur on each accessability option
+
+  const handleCategoryBlur = () => {
+    setFocusedCategory(null);
+  };
+    // Function to handle focus on each accessability option
+
+  const handleCategoryFocus = (categoryName) => {
+    setFocusedCategory(categoryName);
+  };
+  // Function to handle focus on Toast.Header
+  const handleHeaderFocus = () => {
+    setIsBodyHidden(true);
+  };
+
+  // Function to handle blur on Toast.Header
+  const handleHeaderBlur = () => {
+    setIsBodyHidden(false);
+  };
+  useEffect(() => {
+    setOpen(props.openAccess);
+  }, [props.openAccess]);
+  
+  useEffect(() => {
+    document.addEventListener("keydown", handleKeyDown);
+
+    // Cleanup function to remove event listener when component unmounts
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, []); // Empty dependency array means this effect runs only once after the component mounts
+
+  useEffect(() => {
+    // Focus on the close button when the toast opens
+    if (open) {
+      const closeBtn = document.querySelector(".access-tools .close");
+      if (closeBtn) {
+        document.querySelector(".sr-only").remove();
+        closeBtn.setAttribute(
+          "aria-label",
+          "Accessability widget is open, press enter to close"
+        );
+        closeBtn.focus();
+      }
+      document.querySelector(".toast").removeAttribute("role");
+    }
+  }, [open, props.openAccess]);
+
   function adjustFontSize(element, reset, size) {
     if (element.nodeType === Node.ELEMENT_NODE && element.hasChildNodes()) {
       if (!element.classList.contains("access-tools")) {
-        // Check if the element is not within access-tools
         const children = element.childNodes;
         for (let i = 0; i < children.length; i++) {
           const child = children[i];
@@ -61,8 +112,8 @@ const Accessibility = (props) => {
       }
     }
   }
+
   const pauseUpdate = (ispaused, isRestAction) => {
-    console.log(!ispaused, isRestAction);
     if (!ispaused && isRestAction) return;
     const svgElements = document.querySelectorAll("svg");
 
@@ -78,6 +129,7 @@ const Accessibility = (props) => {
       }
     });
   };
+
   const toggleAOSAttributes = () => {
     const cards = document.querySelectorAll(".card");
 
@@ -87,11 +139,7 @@ const Accessibility = (props) => {
         card.removeAttribute("data-aos-offset");
         card.removeAttribute("data-aos-delay");
         card.removeAttribute("data-aos-duration");
-        // card.classList.remove("aos-init");
-        // card.classList.remove("aos-animate");
       } else {
-        // card.classList.add("aos-init");
-        // card.classList.add("aos-animate");
         if (index % 2 === 0) {
           card.setAttribute("data-aos", "fade-right");
         } else {
@@ -105,6 +153,7 @@ const Accessibility = (props) => {
       }
     });
   };
+
   const handleOptionClick = (optionName) => {
     let body = document.body;
 
@@ -120,23 +169,19 @@ const Accessibility = (props) => {
           setTextOption(false);
           adjustFontSize(document.body, true, 3);
         }
-
         break;
       case "Big Cursor":
         setBigCursor(!bigCursor);
         document.documentElement.classList.toggle("custom-cursor");
-
         break;
       case "Readable Fonts":
         setReadableFont(!readableFont);
         body.classList.toggle("readable");
-
         break;
       case "Stop Animations":
         setPauseAnimation(!pauseAnimation);
         pauseUpdate();
         toggleAOSAttributes();
-
         break;
       case "Invert Colors":
         setInvertColor(!invertColor);
@@ -158,7 +203,6 @@ const Accessibility = (props) => {
           "contrast-1",
           "contrast-2"
         );
-
         break;
       case "Brightness":
         setBrightness(true);
@@ -192,7 +236,6 @@ const Accessibility = (props) => {
           );
           setBrightness(false);
         }
-
         break;
       case "Contrast":
         setContrast(true);
@@ -224,7 +267,6 @@ const Accessibility = (props) => {
           );
           setContrast(false);
         }
-
         break;
       case "Grayscale":
         setGrayscale(!grayscale);
@@ -243,7 +285,6 @@ const Accessibility = (props) => {
           "bright-2",
           "invert"
         );
-
         break;
       case "Reading Mask":
         setMask(!mask);
@@ -251,7 +292,6 @@ const Accessibility = (props) => {
       case "Highlight links":
         setHighlight(!highlight);
         document.documentElement.classList.toggle("hilight-links");
-
         break;
       case "Reset":
         setTextOption(false);
@@ -282,12 +322,12 @@ const Accessibility = (props) => {
         );
         body.classList.remove("readable");
         toggleAOSAttributes();
-
         break;
       default:
         break;
     }
   };
+
   const isOptionChosen = (optionName) => {
     switch (optionName) {
       case "Bigger Text":
@@ -314,9 +354,7 @@ const Accessibility = (props) => {
         return false;
     }
   };
-  const openTools = () => {
-    setOpen(!open);
-  };
+
   const toolOptions = [
     {
       name: "Content",
@@ -390,6 +428,8 @@ const Accessibility = (props) => {
       ],
     },
   ];
+
+  const firstFocusableElementRef = useRef(null);
   function BarRenderer({ number, step }) {
     const bars = [];
 
@@ -401,64 +441,157 @@ const Accessibility = (props) => {
 
     return <div>{bars}</div>;
   }
+  let lastClickedElement = null;
+
+  // Event listener for click events
+  document.addEventListener("click", (event) => {
+    // Store a reference to the clicked element
+    lastClickedElement = event.target;
+  });
+
+  // Function to manage focus flow within the modal
+  let previouslyFocusedElement = null;
+
+  // Event listener to track focus
+  document.addEventListener("focusin", (event) => {
+    previouslyFocusedElement = event.target;
+  });
+  // Function to manage focus flow within the modal
+  const handleKeyDown = (event) => {
+    const focusableElements = document.querySelectorAll(
+      ".access-tools .option-item"
+    );
+    const lastFocusableElement =
+      focusableElements[focusableElements.length - 1];
+    const resetButton = document.querySelector(".access-tools .reset-btn");
+    // Handle Tab key press
+
+    if (event.key === "Tab") {
+      // If the last focusable element is focused and Tab is pressed, focus the reset button
+      if (document.activeElement === lastFocusableElement && !event.shiftKey) {
+        console.log("hereee");
+        event.preventDefault();
+        resetButton.focus();
+        return;
+      }
+      // If the reset button is focused and Shift + Tab is pressed, focus the last focusable element
+      else if (previouslyFocusedElement === resetButton) {
+        const closeBtn = document.querySelector(".access-tools .toast-header");
+        if (closeBtn) {
+          closeBtn.focus();
+
+          return;
+        }
+      } else if (document.activeElement === resetButton && event.shiftKey) {
+        event.preventDefault();
+        lastFocusableElement.focus();
+        return;
+      }
+
+      if (
+        lastClickedElement?.classList.contains("close") &&
+        !previouslyFocusedElement.classList.contains("skip-link")
+      ) {
+        const focusableElement = document.querySelectorAll(".skip-link")[0];
+        focusableElement.focus();
+        lastClickedElement = null;
+      }
+    }
+  };
+
+  // Function to handle accessibility modal open/close
+  const openTools = () => {
+    if (open) {
+      const closeBtn = document.querySelector(".access-tools .close");
+      closeBtn?.setAttribute("aria-label", "Exiting widget");
+    }
+
+    setOpen(!open);
+    props.setOpenAccess(!open)
+  };
+
   return (
     <div>
       <div className="accessibility-btn">
-        <FaUniversalAccess size={60} color="#34465e" onClick={openTools} />
+        <FaUniversalAccess
+          size={60}
+          color="#34465e"
+          tabIndex="0"
+          aria-label="Open accessibility widget"
+          onClick={openTools}
+          onKeyPress={(event) => {
+            if (event.key === "Enter") {
+              openTools();
+            }
+          }}
+        />
       </div>
       {mask && <ReadingMask />}
 
       <div className="access-tools">
-        <Toast show={open} onClose={openTools}>
-          <Toast.Header>
-            <span>Accessibility Tools</span>
+        <Toast show={open} onClose={openTools} role="dialog">
+          <Toast.Header
+            tabIndex="0"
+            onFocus={handleHeaderFocus}
+            onBlur={handleHeaderBlur}
+          >
+            <span role="heading" aria-hidden={isBodyHidden}>
+              Accessibility Tools
+            </span>
           </Toast.Header>
-          <Toast.Body>
-            <div>
-              {toolOptions.map((tool, indx) => {
-                return (
-                  <div className="" key={indx}>
-                    <div className="tool-label">{tool.name}</div>
-                    <div className="options">
-                      {tool.options.map((option, index) => {
-                        const optionClassName = isOptionChosen(option.name)
-                          ? "chosen"
-                          : "";
-
-                        return (
-                          <div
-                            className={`option-item ${optionClassName} ${option.name
-                              .split(" ")
-                              .join("-")}`}
-                            key={index}
-                            onClick={option.func}
-                          >
-                            <p>{option.name}</p>
-                            {option.icon}
-                            <br />
-                            {option?.progressSteps && (
-                              <BarRenderer
-                                number={option.progressSteps}
-                                step={option.currentStep}
-                              />
-                            )}
-                          </div>
-                        );
-                      })}
-                    </div>
+          <Toast.Body ref={firstFocusableElementRef} aria-hidden={isBodyHidden}>
+            {toolOptions.map((tool, indx) => {
+              return (
+                <div className="" key={indx}>
+                  <div className="tool-label" role="heading">
+                    {tool.name}
                   </div>
-                );
-              })}
-            </div>
+                  <div className="options" aria-live="polite">
+                    {tool.options.map((option, index) => {
+                      const optionClassName = isOptionChosen(option.name)
+                        ? "chosen"
+                        : "";
+
+                      return (
+                        <button
+                          className={`option-item ${optionClassName} ${option.name
+                            .split(" ")
+                            .join("-")}`}
+                          key={index}
+                          onClick={option.func}
+                          aria-label={`${option.name}`}
+                          aria-hidden={
+                            focusedCategory === option.name ? false : true
+                          } // Apply onFocus here
+                          onFocus={() => handleCategoryFocus(option.name)}
+                          onBlur={handleCategoryBlur} // Apply onBlur here
+                        >
+                          <p>{option.name}</p>
+                          {option.icon}
+                          <br />
+                          {option?.progressSteps && (
+                            <BarRenderer
+                              number={option.progressSteps}
+                              step={option.currentStep}
+                            />
+                          )}
+                        </button>
+                      );
+                    })}
+                  </div>
+                </div>
+              );
+            })}
           </Toast.Body>
-          <div className="toast-footer">
-            <Button
+          <div className="toast-footer" aria-hidden={isBodyHidden}>
+            <button
               variant="primary"
               size="lg"
+              className="reset-btn"
               onClick={() => handleOptionClick("Reset")}
             >
               <GrPowerReset /> Reset Settings
-            </Button>
+            </button>
           </div>
         </Toast>
       </div>

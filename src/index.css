@@ -240,6 +240,16 @@ body {
   background-color: #7ba3c1 !important;
   color: white;
 }
+#jumbo .col svg {
+  font-size: 2.5rem;
+}
+#jumbo .col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding-bottom: 15px;
+}
 #jumbo.light-jumbo {
   background-color: #306b7d !important;
 }
@@ -291,6 +301,9 @@ body {
   background-color: rgba(255, 255, 255, 0.2);
   max-width: 550px;
   color: #0f4b5b;
+}
+.name-project {
+  font-size: 2.5rem;
 }
 .card.light-card {
   background-color: #497e8a91 !important ;
@@ -414,7 +427,7 @@ body {
   color: white;
   display: block;
 }
-.btn-lnk > * {
+.btn-lnk {
   color: white;
   font-size: 35px;
 }
@@ -429,7 +442,7 @@ body {
   text-decoration: underline;
   /* font-family: 'Jacques Francois Shadow'; */
 }
-.btn-lnk a:hover {
+.btn-lnk:hover {
   color: #136a88;
 }
 .me-svg {
@@ -588,12 +601,33 @@ svg.animate #arms2 {
 }
 
 /* accessibility */
+.skip-link {
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+  z-index: 10000000;
+}
+
+.skip-link:focus {
+  top: 10px;
+  left: 15px;
+  position: fixed;
+  background-color: white;
+  border-radius: 21px;
+  padding: 11px;
+  border: solid 1px #427a9c;
+  color: #224b59;
+  font-size: 18px;
+  outline: solid 1px #427a9c;
+}
+
 .accessibility-btn {
   position: fixed;
   left: 15px;
   bottom: 20px;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
+  z-index: 1;
 }
 .access-tools {
   position: fixed;
@@ -633,6 +667,7 @@ svg.animate #arms2 {
   flex-wrap: wrap;
   gap: 10px;
 }
+
 .option-item {
   flex-basis: 30.33%;
   box-sizing: border-box;
@@ -642,6 +677,7 @@ svg.animate #arms2 {
   border-radius: 10px;
   min-height: 100px;
   cursor: pointer;
+  border: solid;
 }
 .option-item.chosen {
   background-color: #0a6585;
@@ -657,11 +693,31 @@ svg.animate #arms2 {
   background-color: #ebebeb;
   padding: 0.75rem;
 }
-.toast-footer .btn {
+.toast-footer button {
+  display: inline-block;
+  font-weight: 400;
+  color: white;
+  text-align: center;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: transparent;
+  border: 1px solid transparent;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: 0.25rem;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
   width: 100%;
   border-radius: 3px !important;
   background-color: #0a6585 !important;
   border-color: #0a6585 !important;
+  padding: 0.5rem 1rem;
+  font-size: 1.25rem;
+  line-height: 1.5;
 }
 .custom-cursor:hover,
 .custom-cursor * {

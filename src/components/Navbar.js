@@ -89,6 +89,7 @@ export default function NavComponent() {
                 behavior: "smooth",
               })
             }
+			aria-label="Go to Main section"
           >
             Home
           </Nav.Link>
@@ -96,10 +97,12 @@ export default function NavComponent() {
             onClick={() =>
               document.getElementById("about")?.scrollIntoView(true)
             }
+			aria-label="Go to About section"
           >
             About
           </Nav.Link>
           <Nav.Link
+		  	aria-label="Go to Projects section"
             onClick={() =>
               document.getElementById("project")?.scrollIntoView(true)
             }

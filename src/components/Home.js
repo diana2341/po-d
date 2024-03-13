@@ -40,20 +40,20 @@ import Typewriter from "typewriter-effect";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-export default function Home() {
+export default function Home({openAccess, setOpenAccess}) {
   const [project, setProject] = useState();
   useEffect(() => {
     setProject(info);
     AOS.init();
   });
 
-  const redirectTo = (location) =>{
-	window.open(location, '_blank');
-}
+  const redirectTo = (location) => {
+    window.open(location, "_blank");
+  };
 
   return (
-    <>
-      <div className="container-main content" id="intro">
+    <main>
+      <section className="container-main content" id="intro" tabIndex="-1">
         <div className="me-svg">
           <Me />
         </div>
@@ -84,8 +84,9 @@ export default function Home() {
             user's experience and satisfaction. I enjoy learning new and
             upcoming changes in technology to enhance my skill set. I am a
             person who is well-organized, a problem solver, and an independent
-            worker who pays close attention to details. I thrive in collaborative 
-			environments and enjoy seamlessly integrating into teams to bring any ideas to life!
+            worker who pays close attention to details. I thrive in
+            collaborative environments and enjoy seamlessly integrating into
+            teams to bring any ideas to life!
           </p>
           <div
             style={{
@@ -95,133 +96,95 @@ export default function Home() {
               gap: "30px",
             }}
           >
-            <h1 className="btn-lnk">
-              <a href="https://www.linkedin.com/in/diana-ponce-1718821a2/">
-                <FaLinkedinIn aria-label="LinkedIn Icon"/>
-              </a>
-            </h1>
-            <h1 className="btn-lnk">
-              <a href="https://github.com/diana2341">
-                <AiOutlineGithub aria-label="Github Icon"/>
-              </a>
-            </h1>
-            {/* <h1 className="btn-lnk">
-							<a href="https://www.instagram.com/diana.poncee/">
-								<AiOutlineInstagram />
-							</a>
-						</h1> */}
-
-            <h1 id="mail" className="btn-lnk">
-              <a href="mailto: dianayponce2341@gmail.com">
-                <AiOutlineMail aria-label="Mail Icon"/>
-              </a>
-            </h1>
+            <a
+              href="https://www.linkedin.com/in/diana-ponce-1718821a2/"
+              className="btn-lnk"
+            >
+              <FaLinkedinIn aria-label="LinkedIn Icon" />
+            </a>
+            <a href="https://github.com/diana2341" className="btn-lnk">
+              <AiOutlineGithub aria-label="Github Icon" />
+            </a>
+            <a
+              href="mailto: dianayponce2341@gmail.com"
+              id="mail"
+              className="btn-lnk"
+            >
+              <AiOutlineMail aria-label="Mail Icon" />
+            </a>
           </div>
         </div>
-      </div>
-
-      <Container id="about">
-        <br />
-        <br />
-        <br />
-        <br />
-        <Jumbotron id="jumbo">
-          <Container>
-            <h2>Languages and Tools I Use</h2>
-            <br />
-            <Row md={5}>
-              <Col>
-                <h1>
-                  <SiCss3 aria-label="CSS Icon"/>{" "}
-                </h1>
-                CSS
-              </Col>
-              <Col>
-                <h1>
-                  <SiHtml5 aria-label="HTML Icon"/>{" "}
-                </h1>
-                HTML5
-              </Col>
-              <Col>
-                <h1>
-                  <SiJavascript aria-label="Javascript Icon"/>
-                </h1>
-                Javascript
-              </Col>
-              <Col>
-                <h1>
-                  <SiBootstrap aria-label="Bootstrap Icon"/>
-                </h1>
-                Boostrap
-              </Col>
-              <Col>
-                <h1>
-                  <SiGithub aria-label="Github Icon"/>
-                </h1>
-                Github
-              </Col>
-              <Col>
-                <h1>
-                  <DiRuby aria-label="Ruby Icon"/>
-                </h1>
-                Ruby
-              </Col>
-              <Col>
-                <h1>
-                  <SiPostgresql aria-label="Postgresql Icon"/>
-                </h1>
-                Postgresql
-              </Col>
-              <Col>
-                <h1>
-                  <SiReact aria-label="React Icon"/>
-                </h1>
-                React
-              </Col>
-              <Col>
-                <h1>
-                  <SiRedux aria-label="Redux Icon"/>
-                </h1>
-                Redux
-              </Col>
-              <Col>
-                <h1>
-                  <SiMysql aria-label="MySQL Icon"/>
-                </h1>
-                Mysql
-              </Col>
-              <Col>
-                <h1>
-                  <SiVuedotjs aria-label="Vue Icon"/>
-                </h1>
-                Vuejs
-              </Col>
-              <Col>
-                <h1>
-                  <SiShopify aria-label="Shopify Icon"/>
-                </h1>
-                Shopify Liquid
-              </Col>
-              <Col>
-                <h1>
-                  <SiNodedotjs aria-label="Node.JS Icon"/>
-                </h1>{" "}
-                Nodejs
-              </Col>
-              <Col>
-                <h1>
-                  <SiTypescript aria-label="Typescript Icon"/>
-                </h1>
-                Typesrcipt
-              </Col>
-              <Col>
-                <h1>
-                  <SiNextdotjs aria-label="Next.JS Icon"/>
-                </h1>
-                Nextjs
-              </Col>
-              <Col>
-                <h1>
+      </section>
+      <section>
+        <Container id="about">
+          <br />
+          <br />
+          <br />
+          <br />
+          <Jumbotron id="jumbo">
+            <Container>
+              <h2>Languages and Tools I Use</h2>
+              <br />
+              <Row md={5}>
+                <Col>
+                  <SiCss3 aria-label="CSS Icon" /> CSS
+                </Col>
+                <Col>
+                  <SiHtml5 aria-label="HTML Icon" /> HTML5
+                </Col>
+                <Col>
+                  <SiJavascript aria-label="Javascript Icon" />
+                  Javascript
+                </Col>
+                <Col>
+                  <SiBootstrap aria-label="Bootstrap Icon" />
+                  Boostrap
+                </Col>
+                <Col>
+                  <SiGithub aria-label="Github Icon" />
+                  Github
+                </Col>
+                <Col>
+                  <DiRuby aria-label="Ruby Icon" />
+                  Ruby
+                </Col>
+                <Col>
+                  <SiPostgresql aria-label="Postgresql Icon" />
+                  Postgresql
+                </Col>
+                <Col>
+                  <SiReact aria-label="React Icon" />
+                  React
+                </Col>
+                <Col>
+                  <SiRedux aria-label="Redux Icon" />
+                  Redux
+                </Col>
+                <Col>
+                  <SiMysql aria-label="MySQL Icon" />
+                  Mysql
+                </Col>
+                <Col>
+                  <SiVuedotjs aria-label="Vue Icon" />
+                  Vuejs
+                </Col>
+                <Col>
+                  <SiShopify aria-label="Shopify Icon" />
+                  Shopify Liquid
+                </Col>
+                <Col>
+                  <SiNodedotjs aria-label="Node.JS Icon" />
+                  Nodejs
+                </Col>
+                <Col>
+                  <SiTypescript aria-label="Typescript Icon" />
+                  Typesrcipt
+                </Col>
+                <Col>
+                  <SiNextdotjs aria-label="Next.JS Icon" />
+                  Nextjs
+                </Col>
+                <Col>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     x="0px"
@@ -229,7 +192,7 @@ export default function Home() {
                     width="48"
                     height="48"
                     viewBox="0 0 256 256"
-					aria-label="Material UI Icon"
+                    aria-label="Material UI Icon"
                   >
                     <g
                       fill="#ffffff"
@@ -260,62 +223,55 @@ export default function Home() {
                       </g>
                     </g>
                   </svg>
-                </h1>
-                Material UI
-              </Col>
-              <Col>
-                <h1>
-                  <SiMongodb aria-label="MongoDB Icon"/>
-                </h1>
-                Mongodb
-              </Col>
-              <Col>
-                <h1>
-                  <SiPostman aria-label="Postman Icon"/>
-                </h1>
-                Postman
-              </Col>
-              <Col>
-                <h1>
-                  <SiReact aria-label="React Native Icon"/>
-                </h1>
-                React Native
-              </Col>
-              <Col>
-                <h1>
-                  <SiFigma aria-label="Figma Icon"/>
-                </h1>
-                Figma
-              </Col>
-            </Row>
-          </Container>
-          <br />
-          <br />
-          <p>
-            <Button
-              className="link-btn"
-              onClick={() =>
-                document.getElementById("project")?.scrollIntoView(true)
-              }
-              variant="outline-light"
-			  aria-label="View Projects"
-            >
-              View Projects
-            </Button>{" "}
-            <Button
-              className="link-btn"
-              href="https://drive.google.com/file/d/1EtuChyRC9yk8A6GMbYpVjeLInhAsql9l/view?usp=sharing"
-              variant="outline-light"
-              target="_blank"
-			  aria-label="View Resume"
-            >
-              View Resume
-            </Button>
-          </p>
-        </Jumbotron>
-      </Container>
+                  Material UI
+                </Col>
+                <Col>
+                  <SiMongodb aria-label="MongoDB Icon" />
+                  Mongodb
+                </Col>
+                <Col>
+                  <SiPostman aria-label="Postman Icon" />
+                  Postman
+                </Col>
+                <Col>
+                  <SiReact aria-label="React Native Icon" />
+                  React Native
+                </Col>
+                <Col>
+                  <SiFigma aria-label="Figma Icon" />
+                  Figma
+                </Col>
+              </Row>
+            </Container>
 
-      <div id="project">
+            <br />
+            <br />
+            <p>
+              <Button
+                className="link-btn"
+                onClick={() =>
+                  document.getElementById("project")?.scrollIntoView(true)
+                }
+                variant="outline-light"
+                aria-label="View Projects"
+              >
+                View Projects
+              </Button>{" "}
+              <Button
+                className="link-btn"
+                href="https://drive.google.com/file/d/1EtuChyRC9yk8A6GMbYpVjeLInhAsql9l/view?usp=sharing"
+                variant="outline-light"
+                target="_blank"
+                aria-label="View Resume"
+              >
+                View Resume
+              </Button>
+            </p>
+          </Jumbotron>
+        </Container>
+      </section>
+
+      <section id="project">
         <div className="presentation">
           <br />
           <h2 className="title2">Projects</h2>
@@ -332,47 +288,61 @@ export default function Home() {
                 data-aos-duration="1000"
               >
                 <div className="card-horizontal">
-               
-                    <img
-					onClick={()=>redirectTo(info.deploy ? info.deploy : info.youtube)}
-                      className="picturep"
-                      variant="top"
-                      alt={`Image of ${info.name} website`}
-                      src={info.main}
-                    />
-                  {" "}
+                  <img
+                    onClick={() =>
+                      redirectTo(info.deploy ? info.deploy : info.youtube)
+                    }
+                    className="picturep"
+                    variant="top"
+                    alt={`Image of ${info.name} website`}
+                    src={info.main}
+                  />{" "}
                   <div className="body ">
                     <div>
-                      <h1 className="name-project">{info.name}</h1>
+                      <span className="name-project">{info.name}</span>
                       <p>{`${info.description}. Tools I used include ${info.tools}`}</p>
-                     
                     </div>
                     <br />
                     <div className="external-l">
                       {info.gitLink ? (
-                        <a href={info.gitLink} target="_blank" rel="noopener noreferrer">
-                          <Button size="sm" variant="outline-light" aria-label={`View ${info.name}'s source Code`}>
-                            Source Code
-                          </Button>
-                        </a>
+                        <Button
+                          size="sm"
+                          variant="outline-light"
+                          aria-label={`View ${info.name}'s source Code`}
+                          href={info.gitLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          Source Code
+                        </Button>
                       ) : (
                         ""
                       )}{" "}
                       {info.youtube ? (
-                        <a href={info.youtube} target="_blank" rel="noopener noreferrer">
-                          <Button size="sm" variant="outline-light" aria-label={`View ${info.name}'s Demo Vdeo`}>
-                            Demo Video
-                          </Button>
-                        </a>
+                        <Button
+                          size="sm"
+                          variant="outline-light"
+                          aria-label={`View ${info.name}'s Demo Vdeo`}
+                          href={info.youtube}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          Demo Video
+                        </Button>
                       ) : (
                         ""
                       )}{" "}
                       {info.deploy ? (
-                        <a href={info.deploy} target="_blank" rel="noopener noreferrer">
-                          <Button size="sm" variant="outline-light" aria-label={`View ${info.name}'s Website`}>
-                            Live Site
-                          </Button>
-                        </a>
+                        <Button
+                          size="sm"
+                          variant="outline-light"
+                          aria-label={`View ${info.name}'s Website`}
+                          href={info.deploy}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          Live Site
+                        </Button>
                       ) : (
                         ""
                       )}
@@ -383,19 +353,25 @@ export default function Home() {
             ))}
           </div>
         </div>
-        <Accessibility aos={AOS} />
+      </section>
 
-        <div id="link">
-          <span id="con-me">
-            // Like what you see?{" "}
-            <a href="mailto: dianap2341@gmail.com" aria-label="email to contact me!"> Contact me!</a>
-          </span>
-          <br />
-          <br />
-          <br />
-        </div>
+      <Accessibility aos={AOS} openAccess={openAccess} setOpenAccess={setOpenAccess}/>
+      <section id="link">
+        <span id="con-me">
+          // Like what you see?{" "}
+          <a
+            href="mailto: dianap2341@gmail.com"
+            aria-label="email to contact me!"
+          >
+            {" "}
+            Contact me!
+          </a>
+        </span>
         <br />
-      </div>
-    </>
+        <br />
+        <br />
+      </section>
+      <br />
+    </main>
   );
 }

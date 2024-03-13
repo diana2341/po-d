@@ -5,7 +5,7 @@ function Toggle({light, lightDark}) {
   return (
    
   <label className='toggle-contain' aria-label="Toggle for night mode or dark mode">
-    <input className='toggle-checkbox' type='checkbox' onChange={lightDark}checked={light} aria-label=""></input>
+    <input className='toggle-checkbox' type='checkbox' onChange={lightDark}checked={light} aria-hidden={true}></input>
     <div className='toggle-slot'>
       <div className='sun-icon-wrapper'>
         <div className="iconify sun-icon" data-icon="feather-sun" data-inline="false"></div>

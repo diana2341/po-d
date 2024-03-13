@@ -626,7 +626,7 @@ svg.animate #arms2 {
   left: 15px;
   bottom: 20px;
   cursor: pointer;
-  transition: all 0.2s ease-in-out;
+  /* transition: all 0.2s ease-in-out; */
   z-index: 1;
 }
 .access-tools {
@@ -641,7 +641,7 @@ svg.animate #arms2 {
 .accessibility-btn:hover {
   opacity: 0.9;
   transform: scale(1.2);
-  transition: all 0.2s ease-in-out;
+  transition: opacity 0.2s ease-in-out;
 }
 .toast-header {
   display: flex;

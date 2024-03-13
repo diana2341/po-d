@@ -30,7 +30,7 @@ export default function NavComponent() {
       document
         .querySelector("nav.navbar.bg-light.fixed-top")
         .classList.add("darkNav");
-		document.querySelector(".accessibility-btn svg").style.color = "white";
+      document.querySelector(".accessibility-btn svg").style.color = "white";
 
       document.querySelector(".navbar-brand").classList.add("light-logo");
       document.querySelector("#jumbo").classList.add("light-jumbo");
@@ -46,7 +46,9 @@ export default function NavComponent() {
     if (!light) {
       localStorage.setItem("mode", "dark");
 
-    //   document.querySelector(".App").style.backgroundColor = `#224b59`;
+      //   document.querySelector(".App").style.backgroundColor = `#224b59`;
+      document.body.style.backgroundColor = `#224b59`;
+
       document
         .querySelector("nav.navbar.bg-light.fixed-top")
         .classList.add("darkNav");
@@ -56,7 +58,9 @@ export default function NavComponent() {
         card.classList.add("light-card")
       );
     } else if (light) {
-    //   document.querySelector(".App").style.backgroundColor = `#89c0d2`;
+      //   document.querySelector(".App").style.backgroundColor = `#89c0d2`;
+      document.body.style.backgroundColor = `#89c0d2`;
+
       document
         .querySelector("nav.navbar.bg-light.fixed-top")
         .classList.remove("darkNav");
@@ -89,7 +93,7 @@ export default function NavComponent() {
                 behavior: "smooth",
               })
             }
-			aria-label="Go to Main section"
+            aria-label="Go to Main section"
           >
             Home
           </Nav.Link>
@@ -97,12 +101,12 @@ export default function NavComponent() {
             onClick={() =>
               document.getElementById("about")?.scrollIntoView(true)
             }
-			aria-label="Go to About section"
+            aria-label="Go to About section"
           >
             About
           </Nav.Link>
           <Nav.Link
-		  	aria-label="Go to Projects section"
+            aria-label="Go to Projects section"
             onClick={() =>
               document.getElementById("project")?.scrollIntoView(true)
             }

@@ -16,7 +16,6 @@ function App() {
     event.preventDefault();
     if (action === "accessibility") {
       setOpenAccess(true);
-      console.log('here')
     }
     if (action === "main") {
       const introContainer = document.querySelector("#intro");

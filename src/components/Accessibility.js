@@ -59,7 +59,7 @@ const Accessibility = (props) => {
   useEffect(() => {
     setOpen(props.openAccess);
   }, [props.openAccess]);
-  
+
   useEffect(() => {
     document.addEventListener("keydown", handleKeyDown);
 
@@ -469,7 +469,6 @@ const Accessibility = (props) => {
     if (event.key === "Tab") {
       // If the last focusable element is focused and Tab is pressed, focus the reset button
       if (document.activeElement === lastFocusableElement && !event.shiftKey) {
-        console.log("hereee");
         event.preventDefault();
         resetButton.focus();
         return;

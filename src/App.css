@@ -17,11 +17,11 @@
   z-index: 500;
   position: relative;
 } */
-.background-container{
+.background-container {
   z-index: 1;
   position: relative;
 }
-.main-container{
+.main-container {
   z-index: 2;
   position: relative;
 }
@@ -54,6 +54,14 @@ html.contrast-2 {
 
 html.hilight-links a {
   text-decoration: underline;
+}
+.btn:focus,
+.btn:active:focus,
+*:focus,
+*:active:focus,
+.toggle-checkbox input:focus + label ,.toggle-checkbox input:active + label  {
+  outline: solid #0a7cff 3px !important;
+  border-radius: 5px;
 }
 .accessibly-app-reading-mask {
   display: block !important;

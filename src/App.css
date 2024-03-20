@@ -55,11 +55,10 @@ html.contrast-2 {
 html.hilight-links a {
   text-decoration: underline;
 }
-.btn:focus,
-.btn:active:focus,
-*:focus,
-*:active:focus,
-.toggle-checkbox input:focus + label ,.toggle-checkbox input:active + label  {
+.btn:focus-visible ,
+.btn:active:focus-visible ,
+.toggle-checkbox input:focus-visible  + label,
+*:focus-visible   {
   outline: solid #0a7cff 3px !important;
   border-radius: 5px;
 }

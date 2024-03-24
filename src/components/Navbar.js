@@ -26,7 +26,7 @@ export default function NavComponent() {
     } else if (value === "dark") {
       setLight(true);
 
-      document.body.style.backgroundColor = `#224b59`;
+      document.body.style.backgroundColor = `#224c5a`;
       document
         .querySelector("nav.navbar.bg-light.fixed-top")
         .classList.add("darkNav");
@@ -46,8 +46,8 @@ export default function NavComponent() {
     if (!light) {
       localStorage.setItem("mode", "dark");
 
-        document.querySelector(".App").style.backgroundColor = `#224b59`;
-      document.body.style.backgroundColor = `#224b59`;
+        document.querySelector(".App").style.backgroundColor = `#224c5a`;
+      document.body.style.backgroundColor = `#224c5a`;
 
       document
         .querySelector("nav.navbar.bg-light.fixed-top")

@@ -42,7 +42,7 @@ const Accessibility = (props) => {
   const handleCategoryBlur = () => {
     setFocusedCategory(null);
   };
-    // Function to handle focus on each accessability option
+  // Function to handle focus on each accessability option
 
   const handleCategoryFocus = (categoryName) => {
     setFocusedCategory(categoryName);
@@ -51,7 +51,30 @@ const Accessibility = (props) => {
   const handleHeaderFocus = () => {
     setIsBodyHidden(true);
   };
-
+  const saveSettings = () => {
+    localStorage.setItem(
+      "accessibilitySettings",
+      JSON.stringify({
+        textSize: textSize,
+        textOption: textOption,
+        bigCursor: bigCursor,
+        readableFont: readableFont,
+        pauseAnimation: pauseAnimation,
+        invertColor: invertColor,
+        brightness: {
+          isBright: brightness,
+          brightnessStep: brightnessStep,
+        },
+        contrast: {
+          isContrast: contrast,
+          contrastStep: contrastStep,
+        },
+        grayscale: grayscale,
+        readingMask: mask,
+        highlightLinks: highlight,
+      })
+    );
+  };
   // Function to handle blur on Toast.Header
   const handleHeaderBlur = () => {
     setIsBodyHidden(false);
@@ -84,8 +107,150 @@ const Accessibility = (props) => {
       document.querySelector(".toast").removeAttribute("role");
     }
   }, [open, props.openAccess]);
+  useEffect(() => {
+    let body = document.body;
+    const accessibilitySettings = JSON.parse(
+      localStorage.getItem("accessibilitySettings")
+    );
 
-  function adjustFontSize(element, reset, size) {
+    if (accessibilitySettings) {
+      setTextOption(accessibilitySettings.textOption);
+      setTextSize(accessibilitySettings.textSize);
+      setPauseAnimation(accessibilitySettings.pauseAnimation);
+      toggleAOSAttributes();
+      pauseUpdate(accessibilitySettings.pauseAnimation, false);
+      setBigCursor(accessibilitySettings.bigCursor);
+      setReadableFont(accessibilitySettings.readableFont);
+      setInvertColor(accessibilitySettings.invertColor);
+      setBrightness(accessibilitySettings.brightness.isBright);
+      setBrightnessStep(accessibilitySettings.brightness.brightnessStep);
+      setContrast(accessibilitySettings.contrast.isContrast);
+      setContrastStep(accessibilitySettings.contrast.contrastStep);
+      setGrayscale(accessibilitySettings.grayscale);
+      setMask(accessibilitySettings.readingMask);
+      setHighlight(accessibilitySettings.highlightLinks);
+      if (highlight) {
+        document.documentElement.classList.add("hilight-links");
+      } else {
+        document.documentElement.classList.remove("hilight-links");
+      }
+      if (contrastStep === 1 && contrast) {
+        document.documentElement.classList.add("contrast-1");
+      } else if (contrastStep === 2 && contrast) {
+        document.documentElement.classList.remove("contrast-1");
+        document.documentElement.classList.add("contrast-2");
+      } else {
+        document.documentElement.classList.remove(
+          "contrast-1",
+          "contrast-2",
+          "invert",
+          "grayscale",
+          "bright-1",
+          "bright-2"
+        );
+      }
+      if (grayscale) {
+        document.documentElement.classList.add("grayscale");
+      } else {
+        document.documentElement.classList.remove("grayscale");
+      }
+      if (readableFont) {
+        body.classList.add("readable");
+      } else {
+        body.classList.remove("readable");
+      }
+      if (bigCursor) {
+        document.documentElement.classList.add("custom-cursor");
+      } else {
+        document.documentElement.classList.remove("custom-cursor");
+      }
+      if (brightnessStep === 1 && brightness) {
+        document.documentElement.classList.add("bright-1");
+      } else if (brightnessStep === 2 && brightness) {
+        document.documentElement.classList.remove("bright-1");
+        document.documentElement.classList.add("bright-2");
+      }
+      if (accessibilitySettings.textOption) {
+        adjustFontSize(
+          document.body,
+          false,
+          accessibilitySettings.textSize,
+          true
+        );
+      }
+    }
+  }, []);
+
+  useEffect(() => {
+    let body = document.body;
+
+    saveSettings(); // Save settings whenever any option changes
+    if (highlight) {
+      document.documentElement.classList.add("hilight-links");
+    } else {
+      document.documentElement.classList.remove("hilight-links");
+    }
+    if (contrastStep === 1 && contrast) {
+      document.documentElement.classList.add("contrast-1");
+    } else if (contrastStep === 2 && contrast) {
+      document.documentElement.classList.remove("contrast-1");
+      document.documentElement.classList.add("contrast-2");
+    } else {
+      document.documentElement.classList.remove(
+        "contrast-1",
+        "contrast-2",
+        "invert",
+        "grayscale",
+        "bright-1",
+        "bright-2"
+      );
+    }
+    if (grayscale) {
+      document.documentElement.classList.add("grayscale");
+    } else {
+      document.documentElement.classList.remove("grayscale");
+    }
+    if (readableFont) {
+      body.classList.add("readable");
+    } else {
+      body.classList.remove("readable");
+    }
+    if (bigCursor) {
+      document.documentElement.classList.add("custom-cursor");
+    } else {
+      document.documentElement.classList.remove("custom-cursor");
+    }
+    if (invertColor) {
+      document.documentElement.classList.add("invert");
+    } else {
+      document.documentElement.classList.remove("invert");
+    }
+    if (brightnessStep === 1 && brightness) {
+      document.documentElement.classList.add("bright-1");
+    } else if (brightnessStep === 2 && brightness) {
+      document.documentElement.classList.remove("bright-1");
+      document.documentElement.classList.add("bright-2");
+    }
+
+    pauseUpdate(pauseAnimation);
+    toggleAOSAttributes();
+  }, [
+    bigCursor,
+    readableFont,
+    pauseAnimation,
+    invertColor,
+    brightness,
+    brightnessStep,
+    contrast,
+    contrastStep,
+    grayscale,
+    mask,
+    highlight,
+    textSize,
+    textOption,
+  ]);
+
+  function adjustFontSize(element, reset, size, pageLoad) {
     if (element.nodeType === Node.ELEMENT_NODE && element.hasChildNodes()) {
       if (!element.classList.contains("access-tools")) {
         const children = element.childNodes;
@@ -101,12 +266,14 @@ const Accessibility = (props) => {
               let amount = size === 1 ? 3 : size === 2 ? 6 : size === 3 ? 9 : 0;
               const newFontSize = reset
                 ? currentFontSize - amount + "px"
+                : pageLoad
+                ? currentFontSize + amount + "px"
                 : currentFontSize + 3 + "px"; // Increase by 3px
               element.style.fontSize = newFontSize;
             }
             break; // Only adjust the font size of the first text node
           } else {
-            adjustFontSize(child, reset, size); // Recursively check child nodes
+            adjustFontSize(child, reset, size, pageLoad); // Recursively check child nodes
           }
         }
       }
@@ -116,9 +283,8 @@ const Accessibility = (props) => {
   const pauseUpdate = (ispaused, isRestAction) => {
     if (!ispaused && isRestAction) return;
     const svgElements = document.querySelectorAll("svg");
-
     svgElements.forEach((svgElement) => {
-      if (!pauseAnimation) {
+      if (pauseAnimation) {
         // Pause the animation by pausing all animations
         svgElement.pauseAnimations();
         svgElement.classList.remove("animate");
@@ -167,21 +333,24 @@ const Accessibility = (props) => {
         if (textSize === 3) {
           setTextSize(0);
           setTextOption(false);
-          adjustFontSize(document.body, true, 3);
+          adjustFontSize(document.body, true, 3, false);
         }
         break;
       case "Big Cursor":
         setBigCursor(!bigCursor);
-        document.documentElement.classList.toggle("custom-cursor");
+
         break;
       case "Readable Fonts":
         setReadableFont(!readableFont);
-        body.classList.toggle("readable");
+        if (readableFont) {
+          body.classList.add("readable");
+        } else {
+          body.classList.remove("readable");
+        }
         break;
       case "Stop Animations":
         setPauseAnimation(!pauseAnimation);
-        pauseUpdate();
-        toggleAOSAttributes();
+
         break;
       case "Invert Colors":
         setInvertColor(!invertColor);
@@ -191,11 +360,6 @@ const Accessibility = (props) => {
         setContrastStep(0);
         setGrayscale(false);
 
-        if (!invertColor) {
-          document.documentElement.classList.add("invert");
-        } else {
-          document.documentElement.classList.remove("invert");
-        }
         document.documentElement.classList.remove(
           "bright-1",
           "bright-2",
@@ -214,19 +378,7 @@ const Accessibility = (props) => {
         setContrast(false);
         setContrastStep(0);
         setGrayscale(false);
-
-        document.documentElement.classList.remove(
-          "invert",
-          "grayscale",
-          "contrast-1",
-          "contrast-2"
-        );
-        if (brightnessStep === 0) {
-          document.documentElement.classList.add("bright-1");
-        } else if (brightnessStep === 1) {
-          document.documentElement.classList.remove("bright-1");
-          document.documentElement.classList.add("bright-2");
-        } else {
+        if (brightnessStep === 2) {
           document.documentElement.classList.remove(
             "bright-1",
             "bright-2",
@@ -236,6 +388,13 @@ const Accessibility = (props) => {
           );
           setBrightness(false);
         }
+        document.documentElement.classList.remove(
+          "invert",
+          "grayscale",
+          "contrast-1",
+          "contrast-2"
+        );
+
         break;
       case "Contrast":
         setContrast(true);
@@ -291,7 +450,11 @@ const Accessibility = (props) => {
         break;
       case "Highlight links":
         setHighlight(!highlight);
-        document.documentElement.classList.toggle("hilight-links");
+        if (highlight) {
+          document.documentElement.classList.add("hilight-links");
+        } else {
+          document.documentElement.classList.remove("hilight-links");
+        }
         break;
       case "Reset":
         setTextOption(false);
@@ -506,18 +669,13 @@ const Accessibility = (props) => {
     }
 
     setOpen(!open);
-    props.setOpenAccess(!open)
+    props.setOpenAccess(!open);
   };
 
   return (
     <div>
       <div className="accessibility-btn">
-        <FaUniversalAccess
-          size={60}
-          color="#34465e"
-          onClick={openTools}
-        
-        />
+        <FaUniversalAccess size={60} color="#34465e" onClick={openTools} />
       </div>
       {mask && <ReadingMask />}
 

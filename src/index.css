@@ -156,6 +156,9 @@ nav.navbar.bg-light.fixed-top.darkNav .navbar-toggler-icon {
   fill: white;
   stroke: white;
 }
+.navbar-nav{
+  align-items: center;
+}
 #link {
   color: rgb(255, 255, 255);
   padding-bottom: 50px;

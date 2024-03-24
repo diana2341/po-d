@@ -40,7 +40,7 @@ import Typewriter from "typewriter-effect";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-export default function Home({openAccess, setOpenAccess}) {
+export default function Home({ openAccess, setOpenAccess }) {
   const [project, setProject] = useState();
   useEffect(() => {
     setProject(info);
@@ -60,7 +60,7 @@ export default function Home({openAccess, setOpenAccess}) {
 
         <div className="text-wrapper">
           <div className="main-text-container">
-            <h1 className="notranslate">
+            <h1 className="notranslate" style={{ fontSize: "52px" }}>
               <Typewriter
                 options={{
                   loop: false,
@@ -355,7 +355,11 @@ export default function Home({openAccess, setOpenAccess}) {
         </div>
       </section>
 
-      <Accessibility aos={AOS} openAccess={openAccess} setOpenAccess={setOpenAccess}/>
+      <Accessibility
+        aos={AOS}
+        openAccess={openAccess}
+        setOpenAccess={setOpenAccess}
+      />
       <section id="link">
         <span id="con-me">
           // Like what you see?{" "}

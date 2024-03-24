@@ -171,12 +171,15 @@ const Accessibility = (props) => {
         document.documentElement.classList.add("bright-2");
       }
       if (accessibilitySettings.textOption) {
-        adjustFontSize(
-          document.body,
-          false,
-          accessibilitySettings.textSize,
-          true
-        );
+        setTimeout(()=>{
+          adjustFontSize(
+            document.body,
+            false,
+            accessibilitySettings.textSize,
+            true
+          );
+        },[125])
+       
       }
     }
   }, []);
@@ -232,12 +235,9 @@ const Accessibility = (props) => {
       document.documentElement.classList.add("bright-2");
     }
 
-    pauseUpdate(pauseAnimation);
-    toggleAOSAttributes();
   }, [
     bigCursor,
     readableFont,
-    pauseAnimation,
     invertColor,
     brightness,
     brightnessStep,
@@ -249,6 +249,10 @@ const Accessibility = (props) => {
     textSize,
     textOption,
   ]);
+  useEffect(()=>{
+    pauseUpdate(pauseAnimation);
+    toggleAOSAttributes();
+  },[pauseAnimation])
 
   function adjustFontSize(element, reset, size, pageLoad) {
     if (element.nodeType === Node.ELEMENT_NODE && element.hasChildNodes()) {

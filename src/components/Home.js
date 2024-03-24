@@ -40,7 +40,7 @@ import Typewriter from "typewriter-effect";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-export default function Home({ openAccess, setOpenAccess }) {
+export default function Home({ openAccess, setOpenAccess, loading, setLoading }) {
   const [project, setProject] = useState();
   useEffect(() => {
     setProject(info);
@@ -359,6 +359,8 @@ export default function Home({ openAccess, setOpenAccess }) {
         aos={AOS}
         openAccess={openAccess}
         setOpenAccess={setOpenAccess}
+        loading={loading}
+        setLoading={setLoading}
       />
       <section id="link">
         <span id="con-me">

@@ -11,19 +11,13 @@
   /* z-index: 1 !important; */
   pointer-events: none;
 }
-/* #about,
-#project,
-.container-main {
-  z-index: 500;
+
+section {
   position: relative;
-} */
-.background-container {
-  z-index: 1;
-  position: relative;
-}
-.main-container {
   z-index: 2;
-  position: relative;
+}
+.accessibility-btn {
+  z-index: 100;
 }
 body.readable,
 body.readable .container-main h1 {
@@ -55,10 +49,10 @@ html.contrast-2 {
 html.hilight-links a {
   text-decoration: underline;
 }
-.btn:focus-visible ,
-.btn:active:focus-visible ,
-.toggle-checkbox input:focus-visible  + label,
-*:focus-visible   {
+.btn:focus-visible,
+.btn:active:focus-visible,
+.toggle-checkbox input:focus-visible + label,
+*:focus-visible {
   outline: solid #0a7cff 3px !important;
   border-radius: 5px;
 }

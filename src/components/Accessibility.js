@@ -250,6 +250,7 @@ const Accessibility = (props) => {
     textOption,
   ]);
   useEffect(()=>{
+    saveSettings();
     pauseUpdate(pauseAnimation);
     toggleAOSAttributes();
   },[pauseAnimation])
